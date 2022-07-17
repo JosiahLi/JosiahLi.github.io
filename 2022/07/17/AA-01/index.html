@@ -1,0 +1,2513 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Chapter 01 | Li LiangJi's Blog</title><meta name="author" content="Li LiangJi"><meta name="copyright" content="Li LiangJi"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="1.1 二阶行列式 \begin{gather*}考虑有方程组\\ \begin{cases} a_{11}x_1+a_{12}x_2&#x3D;b_1\quad (1)\\ a_{21}x_1+a_{22}x_2&#x3D;b_2\quad (2) \end{cases}\\ (1)\times a_{22}-(2)\times a_{12}后\\ (a_{11}a_{22}-a_{12}a_{22})x_1&#x3D;b_">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Chapter 01">
+<meta property="og:url" content="http://example.com/2022/07/17/AA-01/index.html">
+<meta property="og:site_name" content="Li LiangJi&#39;s Blog">
+<meta property="og:description" content="1.1 二阶行列式 \begin{gather*}考虑有方程组\\ \begin{cases} a_{11}x_1+a_{12}x_2&#x3D;b_1\quad (1)\\ a_{21}x_1+a_{22}x_2&#x3D;b_2\quad (2) \end{cases}\\ (1)\times a_{22}-(2)\times a_{12}后\\ (a_{11}a_{22}-a_{12}a_{22})x_1&#x3D;b_">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/pictures/jdgjj/1.png">
+<meta property="article:published_time" content="2022-07-17T09:31:11.000Z">
+<meta property="article:modified_time" content="2022-07-17T13:27:07.564Z">
+<meta property="article:author" content="Li LiangJi">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/pictures/jdgjj/1.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/07/17/AA-01/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":120},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Chapter 01',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-07-17 22:27:07'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/./pictures/profile/1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">8</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> Algorithms</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Algorithms_0/"><i class="fa-fw fas fa-battery-quarter"></i><span> Elementary</span></a></li><li><a class="site-page child" href="/Algorithms_1/"><i class="fa-fw fas fa-battery-half"></i><span> Intermediate</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-heart"></i><span> Mathematics</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/Mathematics/Adavanced-Algebra/"><i class="fa-fw fas fa-heart"></i><span> Advanced Algebra</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/./pictures/jdgjj/1.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Li LiangJi's Blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> Algorithms</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Algorithms_0/"><i class="fa-fw fas fa-battery-quarter"></i><span> Elementary</span></a></li><li><a class="site-page child" href="/Algorithms_1/"><i class="fa-fw fas fa-battery-half"></i><span> Intermediate</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-heart"></i><span> Mathematics</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/Mathematics/Adavanced-Algebra/"><i class="fa-fw fas fa-heart"></i><span> Advanced Algebra</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Chapter 01</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-07-17T09:31:11.000Z" title="Created 2022-07-17 18:31:11">2022-07-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-07-17T13:27:07.564Z" title="Updated 2022-07-17 22:27:07">2022-07-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Mathematics/">Mathematics</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Mathematics/Adavanced-Algebra/">Adavanced Algebra</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Chapter 01"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="1-1-二阶行列式"><a href="#1-1-二阶行列式" class="headerlink" title="1.1 二阶行列式"></a>1.1 二阶行列式</h2><script type="math/tex; mode=display">
+\begin{gather*}考虑有方程组\\
+\begin{cases}
+a_{11}x_1+a_{12}x_2=b_1\quad (1)\\
+a_{21}x_1+a_{22}x_2=b_2\quad (2)
+\end{cases}\\
+(1)\times a_{22}-(2)\times a_{12}后\\
+(a_{11}a_{22}-a_{12}a_{22})x_1=b_1a_{22}-b_2a_{12}\\
+x_{1}=\cfrac{b_1a_{22}-b_{2}a_{12}}{a_{11}a_{22}-a_{12}a_{21}}\\
+用类似的方法消掉x_1后得到\\
+x_2=\cfrac{a_{11}b_2-a_{21}b_1}{a_{11}a_{22}-a_{12}a_{21}}\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}定义二阶行列式\\
+\begin{vmatrix}
+a&b\\
+c&d
+\end{vmatrix}=ad-bc\\
+那么上面的x_1和x_2可以表示为\\
+x_1=\cfrac{\begin{vmatrix}
+b_1&a_{12}\\
+b_2&a_{22}
+\end{vmatrix}\\}
+{\begin{vmatrix}
+a_{11}&a_{12} \\
+a_{21}&a_{22}
+\end{vmatrix}\\}\quad x_2=\cfrac{\begin{vmatrix}
+a_{11} &b_{1}\\
+a_{12} &b_{2}
+\end{vmatrix}\\}
+{\begin{vmatrix}
+a_{11}&a_{12} \\
+a_{21}&a_{22}
+\end{vmatrix}\\}\end{gather*}</script><script type="math/tex; mode=display">
+二阶行列式的几何意义:\\
+\vec{OA}=(a_1,a_2),\vec{OB}=(b_1,b_2)\\
+S_{OAB}=\cfrac{1}{2}abs(\begin{vmatrix}a_1 & a_2\\ b_1 & b_2 \end{vmatrix})</script><h2 id="1-2-三阶行列式"><a href="#1-2-三阶行列式" class="headerlink" title="1.2 三阶行列式"></a>1.2 三阶行列式</h2><script type="math/tex; mode=display">
+\begin{gather*}考虑有方程组\\
+\begin{cases}
+a_{11}x_1+a_{12}x_2+a_{13}x_3 =b_1\quad (1)\\
+a_{21}x_1+a_{22}x_2+ a_{23}x_3 =b_2\quad (2)\\
+a_{31}x_1+a_{32}x_2+ a_{33}x_3 =b_3\quad (3)
+\end{cases}\\
+用待定系数消元(1),(2),(3)分别乘u,v,w,得到\\
+\begin{cases}
+a_{11}ux_1+a_{12}ux_2+a_{13}ux_3 &=ub_1\quad (1)\\
+a_{21}vx_1+a_{22}vx_2+ a_{23}vx_3 &=vb_2\quad (2)\\
+a_{31}wx_1+a_{32}wx_2+ a_{33}wx_3 &=wb_3\quad (3)
+\end{cases}\\
+把新的到的(1)(2)(3)相加得到\\
+(a_{11}u+a_{21}v+a_{31}w)x_1+(a_{12}u+a_{22}v+a_{32}w)x_{2}+(a_{13}u+a_{23}v+a_{33}w)x_3=ub_1+vb_2+wb_3\\
+令x_2,x_3前的系数为0,则得到方程组\\
+\begin{cases}
+a_{12}u+a_{22}v+a_{32}w=0\\
+a_{13}u+a_{23}v+a_{33}w=0\\
+\end{cases}\\
+变形:\\
+\begin{cases}
+\cfrac{a_{12}u}{w}+\cfrac{a_{22}v}{w}=-a_{32}\\
+\cfrac{a_{13}u}{w}+\cfrac{a_{23}v}{w}=-a_{33}
+\end{cases}\\
+观察上述方程组，可以把\cfrac{u}{w}和\cfrac{v}{w}看成两个未知数，那么可以用二阶行列式来求解\\
+\cfrac{u}{w}=\cfrac{
+\begin{vmatrix}
+-a_{32} & a_{22}\\
+-a_{33} & a_{23}
+\end{vmatrix}}
+{
+\begin{vmatrix}
+a_{12} & a_{22}\\
+a_{13} & a_{23}
+\end{vmatrix}
+}分子上的行列式=a_{22}a_{33}-a_{23}a_{32}\Longrightarrow \cfrac{u}{w}=\cfrac{
+\begin{vmatrix}
+a_{22} & a_{23}\\
+a_{32} & a_{33}
+\end{vmatrix}}
+{
+\begin{vmatrix}
+a_{12} & a_{13}\\
+a_{22} & a_{23}
+\end{vmatrix}
+}\\
+同理求得\cfrac{v}{w}=\cfrac{
+-\begin{vmatrix}
+a_{12} & a_{13}\\
+a_{32} & a_{33}
+\end{vmatrix}}
+{
+\begin{vmatrix}
+a_{12} & a_{13}\\
+a_{22} & a_{23}
+\end{vmatrix}
+}\\\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}观察上列分式，可发现w不变\\
+所以令u=\begin{vmatrix}
+a_{22} & a_{23}\\
+a_{32} & a_{33}
+\end{vmatrix},\quad v=-\begin{vmatrix}
+a_{12} & a_{13}\\
+a_{32} & a_{33}
+\end{vmatrix},\quad w=\begin{vmatrix}
+a_{12} & a_{13}\\
+a_{22} & a_{23}
+\end{vmatrix}\\\\
+回到(a_{11}u+a_{21}v+a_{31}w)x_1+=ub_1+vb_2+wb_3\\
+定义三阶行列式:\\
+\begin{vmatrix}
+a_{11} & a_{12} & a_{13}\\
+a_{21} & a_{22} & a_{23}\\
+a_{31} & a_{32} & a_{33}
+\end{vmatrix}=a_{11}\begin{vmatrix}
+a_{22} & a_{23}\\
+a_{32} & a_{33}
+\end{vmatrix}-a_{21}\begin{vmatrix}
+a_{12} & a_{13}\\
+a_{32} & a_{33}
+\end{vmatrix}+a_{31}\begin{vmatrix}
+a_{12} & a_{13}\\
+a_{22} & a_{23}
+\end{vmatrix}\\
+可发现3阶行列式用2阶行列式来定义，那么则可以进行递归\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}若把三阶行列式用二阶行列式展开，将得到6个单项(三正，三负)\\
+\begin{vmatrix}
+a_{11} & a_{12} & a_{13}\\
+a_{21} & a_{22} & a_{23}\\
+a_{31} & a_{32} & a_{33}
+\end{vmatrix}=a_{11}\begin{vmatrix}
+a_{22} & a_{23}\\
+a_{32} & a_{33}
+\end{vmatrix}-a_{21}\begin{vmatrix}
+a_{12} & a_{13}\\
+a_{32} & a_{33}
+\end{vmatrix}+a_{31}\begin{vmatrix}
+a_{12} & a_{13}\\
+a_{22} & a_{23}
+\end{vmatrix}\\\\
+如下\\
+\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}三元方程组的解可以写成\\
+x_1=\cfrac{\begin{vmatrix}
+b_{1} & a_{12} & a_{13}\\
+b_{2} & a_{22} & a_{23}\\
+b_{3} & a_{32} & a_{33}
+\end{vmatrix}}{\begin{vmatrix}
+a_{11} & a_{12} & a_{13}\\
+a_{21} & a_{22} & a_{23}\\
+a_{31} & a_{32} & a_{33}
+\end{vmatrix}},
+\ x_2=\cfrac{\begin{vmatrix}
+a_{11} & b_{1} & a_{13}\\
+a_{21} & b_{2} & a_{23}\\
+a_{31} & b_{3} & a_{33}
+\end{vmatrix}}{\begin{vmatrix}
+a_{11} & a_{12} & a_{13}\\
+a_{21} & a_{22} & a_{23}\\
+a_{31} & a_{32} & a_{33}
+\end{vmatrix}}
+,x_3=\cfrac{\begin{vmatrix}
+a_{11} & a_{12} & b_{1}\\
+a_{21} & a_{22} & b_{2}\\
+a_{31} & a_{32} & b_{3}
+\end{vmatrix}}{\begin{vmatrix}
+a_{11} & a_{12} & a_{13}\\
+a_{21} & a_{22} & a_{23}\\
+a_{31} & a_{32} & a_{33}
+\end{vmatrix}}\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}三阶行列式的几何意义\\
+\vec{OA}=(a_1,a_2,a_3),\vec{OB}=(b_1,b_2,b_3),\vec{OC}=(c_1,c_2,c_3)\\
+V_{OABC}=\cfrac{1}{6}abs(\begin{vmatrix}
+a_{1} & a_{2} & a_{3}\\
+b_{1} & b_{2} & b_{3}\\
+c_{1} & c_{2} & c_{3}
+\end{vmatrix})\quad 平行六面体体积的6分之一\end{gather*}</script><h2 id="二三阶行列式的术语和性质"><a href="#二三阶行列式的术语和性质" class="headerlink" title="二三阶行列式的术语和性质"></a>二三阶行列式的术语和性质</h2><h3 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h3><script type="math/tex; mode=display">
+\begin{gather*}余子式:\\
+若将行列式|A|划去某个元素a_{ij}(i,j=1,2,3)所在的一行和一列\\
+则剩下的元素按照原来的次序组成一个二阶行列式\\
+称这个二阶行列式为元素a_{ij}的余子式，记为M_{ij}\\
+那么\begin{vmatrix}
+a_{11} & a_{12} & a_{13}\\
+a_{21} & a_{22} & a_{23}\\
+a_{31} & a_{32} & a_{33}
+\end{vmatrix}=a_{11}\begin{vmatrix}
+a_{22} & a_{23}\\
+a_{32} & a_{33}
+\end{vmatrix}-a_{21}\begin{vmatrix}
+a_{12} & a_{13}\\
+a_{32} & a_{33}
+\end{vmatrix}+a_{31}\begin{vmatrix}
+a_{12} & a_{13}\\
+a_{22} & a_{23}
+\end{vmatrix}\\
+可以改写为\\
+|A|=a_{11}M_{11}-a_{21}M_{21}+a_{31}M_{31}\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}上三角行列式和下三角行列式\\
+上三角行列式\\
+a_{ij}=0\quad \forall (i>j)\\
+下三角行列式\\
+a_{ij}=0\quad \forall (i<j)\end{gather*}</script><script type="math/tex; mode=display">
+代数余子式\\
+A_{ij}=(-1)^{i+j}M_{ij}\Longrightarrow |A|=a_{11}A_{11}+a_{21}A_{21}+a_{31}A_{31}</script><script type="math/tex; mode=display">
+\begin{gather*}行列式的转置\\
+A=\begin{vmatrix}
+a_{11} & a_{12} & a_{13}\\
+a_{21} & a_{22} & a_{23}\\
+a_{31} & a_{32} & a_{33}
+\end{vmatrix}\Longrightarrow
+|A'|=\begin{vmatrix}
+a_{11} & a_{21} & a_{31}\\
+a_{12} & a_{22} & a_{32}\\
+a_{13} & a_{23} & a_{33}
+\end{vmatrix}\\
+|A|的行列互换\\或以对角线为轴互换元素\end{gather*}</script><h3 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h3><script type="math/tex; mode=display">
+\begin{gather*}性质(1)\\
+上三角或下三角行列式的值等于其对角线元素之积\\
+性质(2)\\
+行列式某行或某列全为0，则行列式=0\\\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}性质(3)\\
+用常数c乘以行列式的某一行或某一列，得到的行列式的值等于原行列式值的c倍\\
+\begin{vmatrix}
+ca_{11} & ca_{12}\\
+a_{21} & a_{22}
+\end{vmatrix}=ca_{11}a_{22}-ca_{12}a_{21}=c|A|\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}性质(4)\\
+交换行列式不同的两行(两列)，行列式的值改变符号\\
+\begin{vmatrix}
+a_{21} & a_{22}\\
+a_{11} & a_{12}\\
+\end{vmatrix}=a_{21}a_{12}-a_{11}a_{22}=-\begin{vmatrix}
+a_{11} & a_{12}\\
+a_{21} & a_{22}\\
+\end{vmatrix}\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}性质(5)\\
+若行列式两行或两列成比例，则行列式的值等于0.\\
+特别地，若行列式的两行或两列相同，则行列式的值等于0\\
+\begin{vmatrix}
+a_{11} & ka_{11}\\
+a_{21} & ka_{21}\\
+\end{vmatrix}=ka_{11}a_{21}-ka_{11}a_{21}=0\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}性质(6)\\
+若行列式中某行(列)元素均为两项之和，则行列式可表示为两个行列式之和\\
+\begin{vmatrix}
+a_{11} & a_{12}\\
+b_{21}+c_{21} & b_{22}+c_{22} \\
+\end{vmatrix}=\begin{vmatrix}
+a_{11} & a_{12}\\
+b_{21} & b_{22}\\
+\end{vmatrix}+\begin{vmatrix}
+a_{11} & a_{12}\\
+c_{21} & c_{22}\\
+\end{vmatrix}\\
+\begin{vmatrix}
+b_{11}+c_{11} & a_{12}\\
+b_{21}+c_{21} & a_{22}\\
+\end{vmatrix}=\begin{vmatrix}
+b_{11} & a_{12}\\
+b_{21} & a_{22}\\
+\end{vmatrix}+
+\begin{vmatrix}
+c_{11} & a_{12}\\
+c_{21} & a_{22}\\
+\end{vmatrix}\\
+需注意下列等式不成立\\
+\begin{vmatrix}
+a_{11}+b_{11} & a_{12}+b_{12}\\
+a_{21}+b_{21} & a_{22}+b_{22}\\
+\end{vmatrix}=
+\begin{vmatrix}
+a_{11} & a_{12}\\
+a_{21} & a_{22}\\
+\end{vmatrix}+
+\begin{vmatrix}
+b_{11} & b_{12}\\
+b_{21} & b_{22}\\
+\end{vmatrix}\\
+应该等于\\
+\begin{vmatrix}
+a_{11} & a_{12}\\
+a_{21} & a_{22}\\
+\end{vmatrix}+
+\begin{vmatrix}
+b_{11} & b_{12}\\
+b_{21} & b_{22}\\
+\end{vmatrix}+
+\begin{vmatrix}
+a_{11} & b_{12}\\
+a_{21} & b_{22}\\
+\end{vmatrix}+
+\begin{vmatrix}
+b_{11} & a_{12}\\
+b_{21} & a_{22}\\
+\end{vmatrix}\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}性质(7)\\
+行列式的某一行(列)乘某个数加到另一行(列)上，行列式的值不变\\
+\begin{aligned}
+\begin{vmatrix}
+a_{11} & a_{12}+ka_{11} \\
+a_{21} & a_{22}+ka_{21} \\
+\end{vmatrix}&=a_{11}\times (a_{22}+ka_{21})-a_{21}\times (a_{12}+ka_{11})\\
+&=a_{11}a_{22}+ka_11a_{12}-a_{21}a_{12}-ka_{21}a_{11}\\
+&=a_{11}a_{22}-a_{21}a_{12}=\begin{vmatrix}
+a_{11} & a_{12}\\
+a_{21} & a_{22}\\
+\end{vmatrix}
+\end{aligned}\end{gather*}</script><script type="math/tex; mode=display">
+性质(8)\\
+行列式和其转置具有相同的值\\</script><script type="math/tex; mode=display">
+性质(9)\\
+|A|=a_{1i}A_{1i}+a_{2i}A_{2i}+a_{2i}A_{2i}\\
+|A|=a_{i1}A_{i1}+a_{i2}A_{i2}+a_{i2}A_{i2}</script><h2 id="1-3-n阶行列式"><a href="#1-3-n阶行列式" class="headerlink" title="1.3 n阶行列式"></a>1.3 n阶行列式</h2><script type="math/tex; mode=display">
+若有n阶行列式\\
+|A|=
+\begin{vmatrix}
+a_{11} & a_{12} & \cdots & a_{1n}\\
+a_{21} & a_{22} & \cdots & a_{2n}\\
+\vdots & \vdots & &\vdots\\
+a_{n1} & a_{n2} & \cdots & a_{nn}\\
+\end{vmatrix}</script><script type="math/tex; mode=display">
+\begin{gather*}余子式\\
+定义元素a_{ij}的余子式M_{ij}:\\行列式|A|中划去第i行，第j列元素组成的(n-1)\times(n-1)阶行列式\\\end{gather*}</script><script type="math/tex; mode=display">
+代数余子式\\
+在行列式|A|中,a_{ij}的代数余子式为\\
+A_{ij}=(-1)^{i+j}M_{ij}</script><script type="math/tex; mode=display">
+\begin{gather*}上三角和下三角行列式\\
+若\forall i<j,且a_{ij}=0,则称该行列式为上三角行列式\\
+若\forall i>j,且a_{ij}=0,则称该行列式为下三角行列式\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}为了进行induction,我们进行如下定义\\
+1阶行列式|A|=|a_{11}|=a_{11}\\
+下设n-1阶的行列式已定义好，特别低M_{ij}已定义\\
+定义n阶行列式为\\
+|A|=a_{11}M_{11}-a_{21}M_{21}+\cdots+(-1)^{n+1}a_{n1}M_{n1}\end{gather*}</script><h3 id="性质-1"><a href="#性质-1" class="headerlink" title="性质(1)"></a>性质(1)</h3><script type="math/tex; mode=display">
+若|A|为上三角或下三角行列式\\
+则|A|=\prod_{i=0}^na_{ii}=a_{11}a_{22}\cdots a_{nn}</script><script type="math/tex; mode=display">
+\begin{gather*}证明:\\
+p(1)=|a_{11}|=a_{11}\quad 为真\\
+假设p(n-1)成立,需要证明p(n-1)\Longrightarrow p(n)\\\\
+情况(1):|A|为上三角\\
+|A|=
+\begin{vmatrix}
+a_{11} & a_{12} & \cdots & a_{1n}\\
+0 & a_{22} & \cdots & a_{2n}\\
+\vdots & \vdots & &\vdots\\
+0 & 0 & \cdots & a_{nn}\\
+\end{vmatrix}\\
+\\\
+\begin{aligned}
+p(n-1)&=a_{11}a_{22}\cdots a_{n-1,n-1}\\
+&=a_{11}M_{11}+0\times M_{21}+\cdots+(-1)^n\times 0M_{n-1,1}\\
+所以M_{11}&=a_{22}a_{33}\cdots a_{nn}\\
+由定义可知,\ |A|=p(n)&=a_{11}M_{11}-0M_{21}+\cdots+(-1)^{n+1}\times 0M_{n1}\\
+&=a_{11}M_{11}\\&=a_{11}a_{22}\cdots a_{nn}
+\end{aligned}\\\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}情况(2):|A|为下三角\\
+|A|=
+\begin{vmatrix}
+a_{11} & 0 & \cdots & 0\\
+a_{21} & a_{22} & \cdots & 0\\
+\vdots & \vdots & &\vdots\\
+a_{n1} & a_{n2} & \cdots & a_{nn}\\
+\end{vmatrix}\\
+由定义可知|A|=a_{11}M_{11}-a_{21}M_{21}+\cdots+(-1)^{n+1}a_{n1}M_{n1}\\
+\forall k,1\leq k\leq n\quad M_{k1}=(b_{ij})_{(n-1)\times (n-1)}\\
+b_{ij}=
+\begin{cases}
+a_{i,j+1}\quad &1\leq i\leq k-1\\
+a_{i+1,j+1}\quad &k\leq i\leq n-1
+\end{cases}\\
+对于(b_{ij})_{(n-1)\times (n-1)}而言,\ \forall i<j,都有b_{ij}=0\\
+从而M_{k1}=(b_{ij})_{(n-1)\times (n-1)}为下三角矩阵,且k\geq 2时，有一个主对角元=0\\
+证: b_{k-1,k-1}=a_{k-1,k}=0\\
+因为M_{k1}为n-1阶行列式且有一个主对角元=0\\
+那么由p(n-1)可知，\forall k\geq 2\quad M_{k1}=0\\
+那么|A|=a_{11}M_{11}=a_{11}a_{22}\cdots a_{nn}\\
+Q.E.D\end{gather*}</script><h3 id="性质-3"><a href="#性质-3" class="headerlink" title="性质(3)"></a>性质(3)</h3><script type="math/tex; mode=display">
+将行列式的某一行或某一列乘上常数c，则得到的行列式|B|=c|A|</script><script type="math/tex; mode=display">
+\begin{gather*}证明:\\
+p(1)=|B|=|ca_{11}|=ca_{11}=c|A|\quad 为真\\
+下设p(n-1)为真\\
+M_{ij}为A的余子式,N_{ij}为B的余子式\\
+\\
+情况(1):某一行乘上c\\
+|B|=
+\begin{vmatrix}
+a_{11} & a_{12} & \cdots & a_{1n}\\
+\vdots & \vdots & &\vdots\\
+ca_{i1} & ca_{i2} & \cdots & ca_{in}\\
+a_{n1} & a_{n2} & \cdots & a_{nn}\\
+\end{vmatrix}\\\\
+
+|B|=a_{11}N_{11}-a_{21}N_{21}+\cdots +(-1)^{i+1}ca_{i1}N_{i1}+\cdots+a_{n1}N_{n1}\\
+\begin{cases}
+当k\neq i 时，由p(n-1)为真可知，N_{k1}=cM_{k1}\\
+当k=i时，不难发现N_{i1}=M_{i1}
+\end{cases}\\
+\begin{aligned}\\
+综上|B|&=ca_{11}M_{11}-ca_{21}M_{21}+\cdots+(-1)^{i+1}ca_{i1}M_{i1}+\cdots+ca_{n1}M_{n1}\\
+&=c(a_{11}M_{11}-a_{21}M_{21}+\cdots+(-1)^{i+1}a_{i1}M_{i1}+\cdots+a_{n1}M_{n1})\\
+&=c|A|
+\end{aligned}\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}情况(2):某一列乘上c\\
+|B|=
+\begin{vmatrix}
+a_{11} & \cdots & ca_{1j} & a_{1n}\\
+a_{21} & \cdots & ca_{2j} & a_{2n}\\
+\vdots & \vdots & \vdots & \vdots\\
+a_{n1} & \cdots & ca_{nj} & a_{nn}\\
+\end{vmatrix}\\
+当j=1时\\
+那么|B|=ca_{11}N_{11}-ca_{21}N_{21}+\cdots +(-1)^{n+1}ca_{n1}N_{n1}=c|A|成立\\
+当j\geq 2时\\
+|B|=a_{11}N_{11}-a_{21}N_{21}+\cdots + (-1)^{n+1}a_{n1}N_{n1}\\
+由p(n-1)可知，其中\forall k \in[1,n]都有N_{k1}=cM_{k1}\\
+那么|B|=ca_{11}M_{11}-ca_{21}M_{21}+\cdots +(n-1)^{n+1}ca_{n1}M_{n1}\\
+=c|A|\\
+Q.E.D\end{gather*}</script><script type="math/tex; mode=display">
+由上可以推出\\
+若行列式B的某一行或某一列有共同的公共因子c\\
+则|B|=C|A|</script><h3 id="性质-2"><a href="#性质-2" class="headerlink" title="性质(2)"></a>性质(2)</h3><script type="math/tex; mode=display">
+\begin{gather*}若n阶行列式|A|的某一行或某一列的元素全部为0，则|A|=0\\
+证明:\\
+因为A的某一行有共同的因子c=0,由性质(3)可知|A|=0\times |B|=0\\
+某一列时同理\end{gather*}</script><h3 id="性质-4"><a href="#性质-4" class="headerlink" title="性质(4)"></a>性质(4)</h3><script type="math/tex; mode=display">
+对换行列式|A|的任意不同行，则行列式的值改变符号(绝对值不变)\\</script><script type="math/tex; mode=display">
+证明:\\
+当n=2时，显然成立\\
+假设n-1成立\\</script><script type="math/tex; mode=display">
+\begin{gather*}情况(1):对换相邻的两行\\
+|B|=
+\begin{vmatrix}
+a_{11} & a_{12} & \cdots & a_{1n}\\
+a_{i+1,1} & a_{i+1, 2} & \cdots & a_{i+1,n}\\
+a_{i,1} & a_{i, 2} & \cdots & a_{i,n}\\
+a_{n1} & a_{n2} & \cdots & a_{nn}
+\end{vmatrix}\\
+注意:此时a_{i+1}所在行为第i行，a_i所在行为第i+1行\\
+按照定义进行展开:\\
+|B|=a_{11}N_{11}-a_{21}N_{21}+\cdots+ (-1)^{i+1}a_{i+1,1}N_{i1}+(-1)^{i + 2}a_{i1}N_{i+1, 1}+\cdots +(-1)^{n + 1}a_{n1}N_{n1}\\
+当k\neq i\vee i + 1时\\
+根据假设n-1成立，则N_{k1}=-M_{k1}\\
+当k=i\vee 1时\\
+N_{i1}=M_{i+1,1},N_{i+1,1}=M_{i1}\\
+综上\\
+\begin{aligned}
+|B|&=-\{a_{11}M_{11}-a_{21}M_{21}+\cdots+ (-1)^{i}a_{i+1,1}M_{i+1,1}+(-1)^{i + 1}a_{i1}M_{i, 1}+\cdots +(-1)^{n + 1}a_{n1}N_{n1}\\
+&=-|A|
+\end{aligned}\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}情况(2):对换任意的i,j\quad (i < j)\\
+已知情况(1)的结论，那么只需要逐行交换即可\\
+把i行逐行交换到j行需要(j-i)次\\
+同理把j交换到原i行需要(j-i-1)次\\
+总共需要2(j-i)-次，奇数次\\
+所以|B|=(-1)^{2(j-i)-1}|A|=-|A|\\
+Q.E.D\end{gather*}</script><h3 id="性质-5"><a href="#性质-5" class="headerlink" title="性质(5)"></a>性质(5)</h3><script type="math/tex; mode=display">
+若行列式|A|的两行成比例，则|A|=0,特别，若行列式的两行相等，则行列式的值等于零\\</script><script type="math/tex; mode=display">
+\begin{gather*}证明:\\
+令i,j行成立比
+两行成立比例说明有一行可以提出常数c性质(3)得到|A|=c|B|\\
+此时发现|A|=|B|相等，交换|B|的ij后，|A|=-|B|=-|A|\quad 性质(4)\\
+可得到2|A|=0即|A|=0\\
+Q.E.D\end{gather*}</script><h3 id="性质-6"><a href="#性质-6" class="headerlink" title="性质(6)"></a>性质(6)</h3><script type="math/tex; mode=display">
+\begin{gather*}|A|,|B|,|C|分别为3个n阶行列式\\它们的第(i,j)元素满足c_{rj}=a_{rj}+b_{rj},而其它元素都相同c_{ij}=a_{ij}=b_{ij}\\
+则|C|=|A|+|B|\\\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}证明:\\
+当n=1时，|a_1+b_1|=a_1+b_1=|a_1|+|b_1|显然成立\\
+假设n-1成立\\
+令M,N,Q别分为|A|,|B|,|C|的余子式\\
+|C|=c_{11}Q_{11}-c_{21}Q_{21}+\cdots +(-1)^{r+1}(a_{r1}+b_{r1})+\cdots+c_{n1}Q_{n1}\\
+当k\neq r时，由n-1成立可知Q_{k1}=M_{k1}+N_{k1}\\
+当k=r时，Q_{r1}=M_{r1}=N_{r1}\\
+综上\\
+|C|=a_{11}M_{11}-a_{21}M_{21}+\cdots + (-1)^{r+1}a_{r1}M_{r1}+\cdots a_{n1}M_{n1}\\
++b_{11}N_{11}-b_{21}N_{21}+\cdots + (-1)^{r+1}b_{r1}N_{r1}+\cdots b_{n1}N_{n1}\\
+因为c_{rj}=a_{rj}+b_{rj}\\
+|C|=|A|+|B|\\
+Q.E.D\end{gather*}</script><h3 id="性质-7"><a href="#性质-7" class="headerlink" title="性质(7)"></a>性质(7)</h3><script type="math/tex; mode=display">
+将行列式的一列乘以常数c加到另一列上，行列式的值不变\\</script><script type="math/tex; mode=display">
+\begin{gather*}证明:\\
+若把|A|的第i行乘上c加到j行上得到|B|\\
+那么根据性质(6),|B|=|A|+|C|\\
+根据性质(5)可发现，|C|=0\\
+所以|B|=|A|\\
+Q.E.D\end{gather*}</script><h3 id="性质-5’"><a href="#性质-5’" class="headerlink" title="性质(5’)"></a>性质(5’)</h3><script type="math/tex; mode=display">
+若行列式|A|的两列成比例，特别，若行列式两行相等，则行列式的值等于0</script><script type="math/tex; mode=display">
+\begin{gather*}证明:\\
+和性质(5)证明类似，先证明相等的情况，然后再利用性质(3)\\
+n=2时，显然成立\\
+假设n-1成立\\\\
+情况(1):\\
+相等的两行都不是第一列\\
+展开|A|=a_{11}M_{11}-a_{21}M_{21}+\cdots +(-1)^{n+1}a_{n_1}M_{n1}\\
+由n-1成立可知，\forall i\in[1,n],M_{i1}=0\\
+所以|A|=0\\\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}情况(2):\\
+令i为第一列，j>i\\
+令|A|的第一列至少有一个元素不为0，称其a_{s1}\neq 0\\
+\begin{vmatrix}
+a_{11} & a_{11} & \cdots &a_{1n}\\
+\vdots & \vdots & \vdots & \vdots\\
+a_{s1} & a_{s1} & \cdots & a_{sn}\\
+\vdots & \vdots & \vdots & \vdots\\
+a_{n1} & a_{n1} & \cdots & a_{nn}
+\end{vmatrix}\\
+由性质(7)可知第s行乘以\cfrac{-a_{1j}}{a_{s1}}可以把第一列和第j列中除了a_{s1}之外所有元素消成0\\
+那么|A|=a_{s1}Q_{s1}\\
+Q_{s1}中有一列全部为0，根据性质(2)可知Q_{s1}\\
+|A|=0\\
+Q.E.D\end{gather*}</script><h3 id="性质-6’"><a href="#性质-6’" class="headerlink" title="性质(6’)"></a>性质(6’)</h3><script type="math/tex; mode=display">
+\begin{gather*}|A|,|B|,|C|是三个行列式\\|C|的第r列元素等于|A|的第r列元素于B的第r列元素之和而其它元素相同\\
+则|C|=|A|+|B|\end{gather*}</script><script type="math/tex; mode=display">
+证明:\\
+n=1显然成立\\
+假设n-1成立\\</script><script type="math/tex; mode=display">
+\begin{gather*}情况(1):\\
+r=1时\\
+|C|=(a_{11}+b_{11})Q_{11}-(a_{21}+b_{21})Q_{21}+\cdots\\
+可知\forall i,Q_{i1}=M_{i1}=N_{i1}\\
+那么代入M_{i1},N_{i1}即可得到|C|=|A|+|B|\\\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}情况(2):\\
+r\neq 1时\\
+|C|=(a_{11}+b_{11})Q_{11}-(a_{21}+b_{21})Q_{21}+\cdots\\
+由n-1成立可知Q_{i1}=M_{i1}+N_{i1}\\
+代入可知|C|=|A|+|B|\\
+Q.E.D\end{gather*}</script><h3 id="性质-7’"><a href="#性质-7’" class="headerlink" title="性质(7’)"></a>性质(7’)</h3><script type="math/tex; mode=display">
+将行列式的一列乘上常数c加到另一行上，行列式的值不变</script><script type="math/tex; mode=display">
+\begin{gather*}证明:\\
+令原行列式为|A|,得到的行列式为|B|\\
+根据性质(6')可知|B|=|A|+|C|\\
+根据性质(5')可知|C|=0\\
+所以|B|=|A|\\
+Q.E.D\end{gather*}</script><h3 id="性质-4’"><a href="#性质-4’" class="headerlink" title="性质(4’)"></a>性质(4’)</h3><script type="math/tex; mode=display">
+交换行列式的两列，行列式的值改变符号</script><script type="math/tex; mode=display">
+\begin{gather*}证明:\\
+利用性质(5'),性质(6')证明\\
+令|B|由交换|A|的r,s列所得到\\
+构造新的行列式\\
+|C|=
+\begin{vmatrix}
+a_{11} & a_{1r}+a_{1s} & a_{1r}+a_{1s} & a_{1n}\\
+\vdots  & \vdots  & \vdots  & \vdots \\
+\vdots  & \vdots  & \vdots  & \vdots \\
+a_{1n} & a_{1n}+a_{1n} & a_{1n}+a_{1n} & a_{nn}
+\end{vmatrix}=0\\\\
+由性质(6')展开:|C|=|A|+|B|+|0|+|0|=0\\
+|A|+|B|=0\\
+即|A|=-|B|\\
+Q.E.D\end{gather*}</script><h3 id="性质-9"><a href="#性质-9" class="headerlink" title="性质(9)"></a>性质(9)</h3><script type="math/tex; mode=display">
+行列式按行展开和按列展开后的结果一样\\</script><script type="math/tex; mode=display">
+\begin{gather*}证明:\\
+利用性质(4')进行相邻行交换\\
+|A|=\begin{vmatrix}
+1 & 2 & \cdots & r- 1 & r\cdots & n
+\end{vmatrix}把第r列交换第1列需要r-1次\\
+得到\begin{vmatrix}
+r & 1 &2 &  \cdots & r- 1 & r+1\cdots & n
+\end{vmatrix}=|B|\\
+|B|=(-1)^{r-1}|A|\\
+对|B|进行展开\\
+|B|=a_{1r}N_{11}-a_{2r}N_{12}+\cdots +(-1)^{n+1}a_{nr}N_{n1}\\
+可发现N_{i1}=M_{ir},同时|(-1)^{r-1}|B|=|A|\\
+\begin{aligned}
+(-1)^{r-1}|B|&=(-1)^{r-1}a_{1r}M_{1r}+(-1)^{r+2}a_{2r}M_{2r}+\cdots +(-1)^{r+n}a_{nr}M_{nr}\\
+&=a_{1r}A_{1r}+a_{2r}A_{2r}+\cdots +a_{nr}A_{nr}\quad
+\end{aligned} \\
+即第r列的各个元素乘上代数余子式之和\\
+Q.E.D\end{gather*}</script><h2 id="1-4-行列式的展开和转置"><a href="#1-4-行列式的展开和转置" class="headerlink" title="1.4 行列式的展开和转置"></a>1.4 行列式的展开和转置</h2><h3 id="引入一个符号-delta-ij"><a href="#引入一个符号-delta-ij" class="headerlink" title="引入一个符号$\delta_{ij}$"></a>引入一个符号$\delta_{ij}$</h3><script type="math/tex; mode=display">
+Kronecken符号\\
+\delta_{ij}=\begin{cases}
+1\quad i=j\\
+0\quad i\neq j
+\end{cases}</script><h3 id="定理-1"><a href="#定理-1" class="headerlink" title="定理(1)"></a>定理(1)</h3><script type="math/tex; mode=display">
+|A|为n阶行列式\quad 1\leq r,s\leq n则\\
+a_{1r}A_{1s}+a_{2r}A_{2s}+\cdots+a_{nr}A_{ns}=\delta_{rs}|A|\\</script><script type="math/tex; mode=display">
+\begin{gather*}证明:\\
+若r=s，则根据性质(9)成立\\
+不妨设r<s\\
+构造新的行列式\\
+|C|=\begin{vmatrix}
+a_{11} &\cdots &a_{1r} & \cdots a_{1r}(s列) & a_{1n}\\ 
+a_{21} &\cdots &a_{2r} & \cdots a_{2r}(s列) & a_{2n}\\
+\vdots & \vdots & \vdots& \vdots & \vdots\\
+a_{n1} &\cdots &a_{nr} & \cdots a_{nr}(s列) & a_{nn}
+\end{vmatrix}=0\\
+按照第s列展开\\
+可发现C_{is}=A_{is}\\
+则|C|=a_{1r}A_{1s}+a_{2r}A_{2s}+\cdots +a_{nr}A_{ns}=0\\
+即若r\neq s则|A|=0\\
+Q.E.D\end{gather*}</script><h3 id="引理-2"><a href="#引理-2" class="headerlink" title="引理(2)"></a>引理(2)</h3><script type="math/tex; mode=display">
+\begin{gather*}若|A|的第s行中，只有一个不为0的元素，则\\|A|=
+\begin{vmatrix}
+a_{11} & \cdots & a_{1r} & \cdots & a_{1n}\\
+\vdots & \vdots & \vdots & \vdots& \vdots  \\
+0 & \cdots & a_{sr} & \cdots & 0\\
+\vdots & \vdots & \vdots & \vdots& \vdots  \\
+a_{n1} & \cdots & a_{nr} & \cdots & a_{nn}
+\end{vmatrix}=a_{sr}\cdot A_{sr}\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}证明:\\
+按第r列展开\\
+|A|=a_{1r}A_{1r}+a_{2r}A_{2r}+\cdots +a_{sr}A_{sr}+\cdots +a_{nr}A_{nr}\\
+可发现\forall i\neq s都有A_{ir}=0\\
+所以|A|=a_{sr}A_{sr}\\
+Q.E.D\end{gather*}</script><h3 id="引理-3"><a href="#引理-3" class="headerlink" title="引理(3)"></a>引理(3)</h3><script type="math/tex; mode=display">
+|A|=a_{r1}A_{r1}+a_{r2}A_{r2}+\cdots +a_{rn}A_{rn}\\
+(按照任何一行进行展开)</script><script type="math/tex; mode=display">
+\begin{gather*}证明:\\
+按照性质(6)可以拆分第r行\\
+a_{r1}=a_{r1}+0+\cdots+0\quad (n-1)个0\\
+a_{r2}=0+a_{r2}+\cdots+0\quad (n-1)个0\\
+\vdots\\
+a_{rn}=0+0+\cdots +a_{rn}\quad (n-1)个0\\
+则根据引理(2)可知\\
+|A|=a_{r1}A_{r1}+a_{r2}A_{r2}+\cdots +a_{rn}A_{rn}\\
+Q.E.D\end{gather*}</script><h3 id="定理-4"><a href="#定理-4" class="headerlink" title="定理(4)"></a>定理(4)</h3><script type="math/tex; mode=display">
+|A|为n阶行列式\quad 1\leq r,s\leq n则\\
+a_{r1}A_{s1}+a_{r2}A_{s2}+\cdots +a_{rn}A_{sn}=\delta_{rs}|A|</script><script type="math/tex; mode=display">
+\begin{gather*}证明:\\
+根据引理(3)r=s时,成立\\
+假设r<s\\
+构造新的行列式\\
+|C|=\begin{vmatrix}
+a_{11} & a_{12} & \cdots & a_{1n}\\
+\vdots & \vdots & \vdots & \vdots\\ 
+a_{r1} & a_{r2} & \cdots & a_{rn}\\
+\vdots & \vdots & \vdots & \vdots\\ 
+a_{r1}(s行) & a_{r2}(s行) & \cdots & a_{rn}(s行)\\
+\vdots & \vdots & \vdots & \vdots\\ 
+a_{n1} & a_{n2} & \cdots & a_{nn}\\
+\end{vmatrix}=0\\
+按照第s行展开\\
+可发现C_{si}=A_{si}\\
+|C|=a_{r1}A_{s1}+a_{r2}A_{s2}+\cdots +a_{rn}A_{sn}=0\\
+Q.E.D\end{gather*}</script><h3 id="定理-5"><a href="#定理-5" class="headerlink" title="定理(5)"></a>定理(5)</h3><script type="math/tex; mode=display">
+\begin{gather*}若A'为A的转置,则|A'|=|A|\\
+|A|=
+\begin{vmatrix}
+a_{11} & a_{12} & \cdots & a_{1n}\\
+a_{21} & a_{22} & \cdots & a_{2n}\\
+\vdots & \vdots & &\vdots\\
+a_{n1} & a_{n2} & \cdots & a_{nn}\\
+\end{vmatrix},|A'|=
+\begin{vmatrix}
+a_{11} & a_{21} & \cdots & a_{n1}\\
+a_{12} & a_{22} & \cdots & a_{n2}\\
+\vdots & \vdots & &\vdots\\
+a_{1n} & a_{2n} & \cdots & a_{nn}\\
+\end{vmatrix}\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}证明:\\
+令|A'|的余子式为N_{ij},|A|的余子式为M_{ij}\\
+n=1时，显然成立\\
+假设n-1时成立\\
+|A|=a_{11}M_{11}-a_{21}M_{21}+\cdots+(-1)^{n+1}a_{n1}M_{n1}\\
+根据归纳假设n-1时成立，\forall i,j都有M_{ij}=N_{ji}\\
+则按第一行进行展开|A|并把M_{ij}=N_{ji}代入\\
+\begin{aligned}
+|A|&=a_{11}M_{11}-a_{12}M_{12}+\cdots +(-1)^{n+1}a_{1n}M_{1n}\\
+&=a_{11}N_{11}-a_{12}N_{21}+\cdots +(-1)^{n+1}a_{1n}N_{n1}\\
+&=|A'|\quad (按第一列展开)
+\end{aligned}\\
+Q.E.D\end{gather*}</script><h3 id="行列式与方程组解的关系"><a href="#行列式与方程组解的关系" class="headerlink" title="行列式与方程组解的关系"></a>行列式与方程组解的关系</h3><script type="math/tex; mode=display">
+\begin{gather*}假设有方程组\begin{cases}
+a_{11}x_1+a_{12}x_2+\cdots a_{1n}x_n=b_1\\
+a_{21}x_1+a_{22}x_2+\cdots a_{2n}x_n=b_2\\
+\cdots  \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots \\
+a_{n1}x_1+a_{n2}x_2+\cdots a_{nn}x_n=b_n
+\end{cases}记作(*)\\
+有解\\
+它的系数行列式|A|=
+\begin{vmatrix}
+a_{11} & a_{12} & \cdots & a_{1n}\\
+a_{21} & a_{22} & \cdots & a_{2n}\\
+\vdots & \vdots & &\vdots\\
+a_{n1} & a_{n2} & \cdots & a_{nn}\\
+\end{vmatrix}\\\\
+令|A_1|=
+\begin{vmatrix}
+b_1 & a_{12} & \cdots & a_{1n}\\
+b_2 & a_{22} & \cdots & a_{2n}\\
+\vdots & \vdots & &\vdots\\
+b_n & a_{n2} & \cdots & a_{nn}\\
+\end{vmatrix}=
+\begin{vmatrix}
+a_{11}x_1+a_{12}x_2+\cdots a_{1n}x_n & a_{12}\cdots a_{1n}\\
+a_{21}x_1+a_{22}x_2+\cdots a_{2n}x_n & a_{22}\cdots a_{2n}\\
+\cdots  \cdots \cdots \cdots &\cdots \cdots \cdots \cdots \cdots \\
+a_{n1}x_1+a_{n2}x_2+\cdots a_{nn}x_n & a_{n2}\cdots a_{nn}\\
+\end{vmatrix}\\
+根据性质(7),第2列乘上 -x_2加到第一列上,第3列，\cdots,第n列同理\\
+|A_1|=
+\begin{vmatrix}
+a_{11}x_1 & a_{12} & \cdots & a_{1n}\\
+a_{21}x_1 & a_{22} & \cdots & a_{2n}\\
+\vdots & \vdots & &\vdots\\
+a_{n1}x_1 & a_{n2} & \cdots & a_{nn}\\
+\end{vmatrix}\\
+根据性质(3)，把x_1提出\\
+|A_1|=x_1\cdot |A|\\
+x_1=\cfrac{|A_1|}{|A|}\\
+同理x_2=\cfrac{|A_2|}{|A|},\cdots ,x_n=\cfrac{|A_n|}{|A|}\quad (前提是方程组必须有解)\end{gather*}</script><h3 id="定理-6-Cramen法则"><a href="#定理-6-Cramen法则" class="headerlink" title="定理(6) Cramen法则"></a>定理(6) Cramen法则</h3><p>引理</p>
+<script type="math/tex; mode=display">
+\begin{gather*}若有
+\begin{bmatrix}
+a_{11} & a_{12} & \cdots a_{1n}\\
+a_{21} & a_{22} & \cdots a_{2n}\\
+\vdots & \vdots & \vdots\\
+a_{m1} & a_{12} & \cdots a_{nn}
+\end{bmatrix}的m\times n数组，进行求和\\\\
+按行求和:\\\
+\sum_{j=1}^n a_{1j}+\sum_{j=1}^n a_{2j}+\cdots+\sum_{j=1}^n a_{mj}=\sum_{i=1}^m\sum_{j=1}^na_{ij}\\
+按列求和\\
+\sum_{i=1}^ma_{i1}+\sum_{i=1}^ma_{i2}+\cdots +\sum_{i=1}^ma_{in}=\sum_{j=1}^n\sum_{i=1}a_{ij}\\\
+由上可知:\\
+\sum_{i=1}^m\sum_{j=1}^na_{ij}=\sum_{j=1}^n\sum_{i=1}a_{ij}\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}若|A|\neq 0(系数行列式)，则方程组(*)有唯一解\\
+x_1=\cfrac{|A_1|}{|A|},x_2=\cfrac{|A_2|}{|A|},\cdots ,x_n=\cfrac{|A_n|}{|A|}\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}通过上面行列式与方程组(*)解的关系可知，解得形式必须如上\\
+那么剩下只需要证明x_i=\cfrac{|A_i|}{|A|}为(*)的解即可\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}已知x_j=\cfrac{|A_j|}{|A|}=\cfrac{1}{|A|}\sum_{i=1}^nb_{i}A_{ij}\\
+考虑(*)的第k个方程:\sum_{j=1}^na_{kj}x_j=b_k是否成立?\\
+把x_j代入\\
+\begin{aligned}
+&\sum_{j=1}^n\bigg(a_{kj}\cfrac{1}{|A|}\sum_{i=1}^nb_{i}A_{ij} \bigg)\\
+&=\cfrac{1}{|A|}\bigg(\sum_{j=1}^n\sum_{i=1}^na_{kj}b_{i}A_{ij} \bigg)\\
+&=\cfrac{1}{|A|}\sum_{i=1}^nb_i\sum_{j=1}^na_{kj}A_{ij}\\
+&=\cfrac{1}{|A|}\bigg(\sum_{i=1}^nb_i\cdot \delta_{ki}|A|\bigg)
+\end{aligned}\\
+可知只有在k=i时b_i\cdot \delta_{ki}|A|\neq 0\\
+\cfrac{1}{|A|}\bigg(\sum_{i=1}^nb_i\cdot \delta_{ki}|A|\bigg)=\cfrac{1}{|A|}b_k|A|=b_k\\
+Q.E.D\end{gather*}</script><h2 id="1-5-行列式的计算"><a href="#1-5-行列式的计算" class="headerlink" title="1.5 行列式的计算"></a>1.5 行列式的计算</h2><h3 id="行列式的计算原则"><a href="#行列式的计算原则" class="headerlink" title="行列式的计算原则"></a>行列式的计算原则</h3><ul>
+<li>尽可能制造多的$0$或$1$，再按此行展开进行降阶</li>
+<li>利用性质(3)提取公因子$c$</li>
+<li>利用性质(7)一行(列)乘上$c$加上另一行(列)</li>
+</ul>
+<h3 id="例1"><a href="#例1" class="headerlink" title="例1"></a>例1</h3><script type="math/tex; mode=display">
+\begin{vmatrix}
+a_{11} & \cdots & a_{1s} & \cdots& a_{1n}\\
+\cdots & \cdots & \cdots & \cdots & \cdots\\
+0 & \cdots & a_{rs} & \cdots & 0\\
+\cdots & \cdots & \cdots & \cdots & \cdots\\
+a_{n1} & \cdots & a_{ns} & \cdots& a_{nn}
+\end{vmatrix}=a_{rs}A_{rs}</script><h3 id="例2-利用0或1降阶"><a href="#例2-利用0或1降阶" class="headerlink" title="例2 (利用0或1降阶)"></a>例2 (利用0或1降阶)</h3><script type="math/tex; mode=display">
+|A|=
+\begin{vmatrix}
+1 & 0 & 2 & 1\\
+2 & -1 & 1 & 0\\
+1 & 0 &0 & 3\\
+-1 & 0& 2 & 1
+\end{vmatrix}</script><script type="math/tex; mode=display">
+\begin{gather*}按(2,2)展开\\
+\begin{aligned}
+|A|&=(-1)\times 
+\begin{vmatrix} 
+1 & 2 & 1\\
+1 & 0 & 3\\
+-1 &  2 & 1
+
+\end{vmatrix}\\\\
+&=(-1)\times \begin{vmatrix} 
+0 & 2 & -2\\
+1 & 0 & 3\\
+0 & 2 & 4
+\end{vmatrix}\\\\
+&=\begin{vmatrix} 
+2 & -2\\
+2 & 4
+\end{vmatrix}\\\\
+&=12
+\end{aligned}\end{gather*}</script><h3 id="例3-利用0或1降阶"><a href="#例3-利用0或1降阶" class="headerlink" title="例3 (利用0或1降阶)"></a>例3 (利用0或1降阶)</h3><script type="math/tex; mode=display">
+|A|=
+\begin{vmatrix}
+7 & 3 & 1 & -5\\
+2 & 6 & -3 & 0\\
+3 & 11 & -1 & 4\\
+-6 & 5 & 2 & -9
+\end{vmatrix}\\
+利用(1,3)展开</script><script type="math/tex; mode=display">
+|A|=
+\begin{vmatrix}
+7 & 3 & 1 & -5\\
+23 & 15 & 0 & -15\\
+10 & 14 & 0 & -1\\
+-20 & -1 & 0 & 1
+\end{vmatrix}=
+\begin{vmatrix} 
+23 & 15  & -15\\
+10 & 14  & -1\\
+-20 & -1  & 1
+\end{vmatrix}=\begin{vmatrix} 
+-277 & 0 & 0\\
+-10 & 13 & 0\\
+-20 & -1 & 1
+\end{vmatrix}=-277\times 13</script><h3 id="例4-提取-c"><a href="#例4-提取-c" class="headerlink" title="例4(提取$c$)"></a>例4(提取$c$)</h3><script type="math/tex; mode=display">
+|A|=\begin{vmatrix}
+3 & 6 & 12\\
+2 & -3 & 0\\
+5 & 1 & 2
+\end{vmatrix}=3\times \begin{vmatrix}
+1 & 2 & 4\\
+2 & -3 & 0\\
+5 & 1 & 2
+\end{vmatrix}=6\times \begin{vmatrix}
+1 & 2 & 2\\
+2 & -3 & 0\\
+5 & 1 & 1
+\end{vmatrix}=6\times \begin{vmatrix}
+-9 & 0 & 0\\
+2 & -3 & 0\\
+5 & 1 & 1
+\end{vmatrix}=6\times 27</script><h3 id="例5-mathbf-Vander-Monde行列式-递推法"><a href="#例5-mathbf-Vander-Monde行列式-递推法" class="headerlink" title="例5 $\mathbf{Vander\ Monde行列式}$ (递推法)"></a>例5 $\mathbf{Vander\ Monde行列式}$ (递推法)</h3><script type="math/tex; mode=display">
+V_n=
+\begin{vmatrix} 
+1& x_1 & x_1^{2} & \cdots & x_{1}^{n-2}& x_{1} ^{n - 1}\\
+1& x_2 & x_2^{2} & \cdots & x_{2}^{n-2}& x_{2} ^{n - 1}\\
+\cdots  & \cdots & \cdots & \cdots & \cdots & \cdots\\
+1& x_{n-1} & x_{n-1}^{2} & \cdots & x_{n-1}^{n-2}& x_{n-1} ^{n - 1}\\
+1& x_{n} & x_{n}^{2} & \cdots & x_{n}^{n-2}& x_{n} ^{n - 1}
+\end{vmatrix}</script><script type="math/tex; mode=display">
+\begin{gather*}可知(1,1)到(n-1,n-1)为V_{n-1}\\
+那么想办法干掉第n行\\
+第n-1列\times (-x_n)加到第n列，第n-2列\times (-x_n)\cdots 依次类推\\
+V_n=
+\begin{vmatrix} 
+1& x_1-x_n & x_1^{2}-  x_n\cdot x_{1} & \cdots & x_{1}^{n-2} - x_n\cdot x_{1}^{n-3}& x_{1} ^{n - 1}- x_n\cdot x_{1}^{n-2}\\
+1& x_2-x_n & x_2^{2}- x_n\cdot x_{2} & \cdots & x_{2}^{n-2} - x_n\cdot x_{2}^{n-3}& x_{2} ^{n - 1}-x_n\cdot x_{2}^{n-2}\\
+\cdots  & \cdots & \cdots & \cdots & \cdots & \cdots\\
+1& x_{n-1}-x_n & x_{n-1}^{2} - x_n\cdot x_{n-1} & \cdots & x_{n-1}^{n-2}-x_n\cdot x_{n-1}^{n-3}& x_{n-1} ^{n - 1}-x_n\cdot x_{n-1}^{n-2}\\
+1& 0 & 0 & \cdots & 0&0
+\end{vmatrix}\\\\
+
+=(-1)^{n+1}
+\begin{vmatrix} 
+x_1-x_n & x_1^{2}- x_n\cdot x_1& \cdots & x_{1}^{n-2} - x_n\cdot x_{1}^{n-3}& x_{1} ^{n - 1}- x_n\cdot x_{1}^{n-2}\\
+x_2-x_n & x_2^{2} - - x_n\cdot x_2 & \cdots & x_{2}^{n-2} - x_n\cdot x_{2}^{n-3}& x_{2} ^{n - 1}-x_n\cdot x_{2}^{n-2}\\
+\cdots  & \cdots & \cdots & \cdots & \cdots & \cdots\\
+x_{n-1}-x_n & x_{n-1}^{2} - x_n\cdot x_{n-1} & \cdots & x_{n-1}^{n-2}-x_n\cdot x_{n-1}^{n-3}& x_{n-1} ^{n - 1}-x_n\cdot x_{n-1}^{n-2}\\
+\end{vmatrix}\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}V_n=(-1)^{n + 1}\cdot (x_1-x_n)\cdot (x_2-x_n)\cdots (x_{n-1}-x_n)\begin{vmatrix} 
+1& x_1 & x_1^{2} & \cdots & x_{1}^{n-2}\\
+1& x_2 & x_2^{2} & \cdots & x_{2}^{n-2}\\
+\cdots  & \cdots & \cdots & \cdots & \cdots \\
+1& x_{n-1} & x_{n-1}^{2} & \cdots & x_{n-1}^{n-2}\\
+1& x_{n} & x_{n}^{2} & \cdots & x_{n}^{n-2}
+\end{vmatrix}\\
+=(-1)^{n + 1}\cdot (x_1-x_n)\cdot (x_2-x_n)\cdots (x_{n-1}-x_n)\cdot V_{n-1}\\
+大指标-小指标可以把(-1)^{n+1}消掉\\
+可知V_n=\prod_{1\leq i<j}(x_j-x_i)\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}考虑\widetilde{V_n}=\begin{vmatrix} 
+x_{1} ^{n - 1}& x_{1}^{n-2} & x_{1}^{n-3} & \cdots & x_1& 1\\
+x_{2} ^{n - 1}& x_{2}^{n-2} & x_{2}^{n-3} & \cdots & x_2& 1\\
+\cdots  & \cdots & \cdots & \cdots & \cdots & \cdots\\
+x_{n-1} ^{n - 1}& x_{n-1}^{n-2} & x_{n-1}^{n-3} & \cdots & x_{n-1}& 1\\
+x_{n} ^{n - 1}& x_{n}^{n-2} & x_{n}^{n-3} & \cdots & x_{n}& 1\\
+\end{vmatrix}\\
+交换第一列和第n列，第二列，n-1列\cdots\\
+一共交换了\cfrac{n\cdot (n-1)}{2}次\\
+\widetilde{V_n}=(-1)^{\frac{n(n-1)}{2}}V_n\quad V_n共有\binom{n}{2}=\cfrac{n(n-1)}{2}可以消掉(-1)\\
+即\widetilde{V_n}=V_n=\prod_{1\leq i<j}(x_i-x_j)\end{gather*}</script><h3 id="例6-多项式友阵的特征多项式-递推法"><a href="#例6-多项式友阵的特征多项式-递推法" class="headerlink" title="例6 多项式友阵的特征多项式 (递推法)"></a>例6 多项式友阵的特征多项式 (递推法)</h3><script type="math/tex; mode=display">
+F_n=
+\begin{vmatrix}
+\lambda & 0 & 0 & \cdots & 0 & a_n\\
+-1 & \lambda & 0 & \cdots & 0 & a_{n-1}\\
+0 & -1 & \lambda & \cdots & 0 & a_{n-2}\\
+\cdots  & \cdots & \cdots & \cdots & \cdots & \cdots\\
+0 & 0 & 0 & \cdots & \lambda & a_2\\
+0 & 0 & 0 & \cdots & -1 & \lambda+a_1\\
+
+
+\end{vmatrix}</script><script type="math/tex; mode=display">
+按第一行展开\\
+\begin{aligned}
+F_n&=\lambda \cdot F_{n-1}+(-1)^{n+1}a_n\cdot (-1)^{n-1}\quad 主对角线(n-1)个-1\\
+&=\lambda \cdot F_{n-1}+a_n\\
+&=\lambda \cdot (\lambda \cdot F_{n-2}+a_{n-1})+a_n\\
+&=\lambda^2\cdot F_{n-2}+\lambda a_{n-1}+a_n\\
+&=a_n+\lambda a_{n-1}+\lambda^2 a_{n-2}+\lambda^3 a_{n-3}+\cdots +\lambda^n\\
+&=\sum _{k=0}^n \lambda ^ka_{n-k}
+\end{aligned}</script><h3 id="例7-求和法"><a href="#例7-求和法" class="headerlink" title="例7 (求和法)"></a>例7 (求和法)</h3><script type="math/tex; mode=display">
+|A|=
+\begin{vmatrix}
+x & a & a & \cdots & a & a\\
+a & x  & a & \cdots & a & a\\
+\cdots & \cdots & \cdots & \cdots & \cdots & \cdots\\
+a & a & a & \cdots & x  & a\\
+a & a & a & \cdots & a & x \\
+\end{vmatrix}</script><script type="math/tex; mode=display">
+观察可发现各列的和相等\\
+把第2行到第n行加到第1行上</script><script type="math/tex; mode=display">
+\begin{gather*}|A|=
+\begin{vmatrix}
+x+(n-1)a & x+(n-1)a & x+(n-1)a & \cdots & x+(n-1)a & x+(n-1)a\\
+a & x  & a & \cdots & a & a\\
+\cdots & \cdots & \cdots & \cdots & \cdots & \cdots\\
+a & a & a & \cdots & x  & a\\
+a & a & a & \cdots & a & x \\
+\end{vmatrix}\\\\
+=x+(n-1)a\begin{vmatrix}
+1 & 1 & 1 & 1 & 1 & 1\\
+a & x  & a & \cdots & a & a\\
+\cdots & \cdots & \cdots & \cdots & \cdots & \cdots\\
+a & a & a & \cdots & x  & a\\
+a & a & a & \cdots & a & x \\
+\end{vmatrix}\\\\=x+(n-1)a\begin{vmatrix}
+1 & 1 & 1 & 1 & 1 & 1\\
+0 & x-a  & 0 & \cdots & 0 & 0\\
+\cdots & \cdots & \cdots & \cdots & \cdots & \cdots\\
+0 & 0 & 0 & \cdots & x-a  & 0\\
+0 & 0 & 0 & \cdots & 0 & x-a \\
+\end{vmatrix}\\\\
+=(x+(n-1)a)\cdot (x-a)^{n-1}\end{gather*}</script><h3 id="例8-求和法"><a href="#例8-求和法" class="headerlink" title="例8 (求和法)"></a>例8 (求和法)</h3><script type="math/tex; mode=display">
+|A|=
+\begin{vmatrix}
+x & y & z & w\\
+y & x & w & z\\
+z & w & x & y\\
+w & z & y & x
+\end{vmatrix}\\
+可发现各列和相等</script><script type="math/tex; mode=display">
+\begin{gather*}|A|=
+\begin{vmatrix}
+x+y+z+w & y & z & w\\
+x+y+z+w & x & w & z\\
+x+y+z+w & w & x & y\\
+x+y+z+w & z & y & x
+\end{vmatrix}
+=(x+y+z+w)
+\begin{vmatrix}
+1 & y & z & w\\
+1 & x & w & z\\
+1 & w & x & y\\
+1 & z & y & x
+\end{vmatrix}\\\\
+=(x+y+z+w)
+\begin{vmatrix}
+1 & y & z & w\\
+0 & x-y & w-z & z-w\\
+0 & w-y & x-z & y-w\\
+0 & z-y & y-z & x-w
+\end{vmatrix}=(x+y+z+w)
+\begin{vmatrix}
+x-y & w-z & z-w\\
+w-y & x-z & y-w\\
+z-y & y-z & x-w
+\end{vmatrix}
+\\\\
+=
+(x+y+z+w)
+\begin{vmatrix}
+x+w-y-z & w-z & 0\\
+w+x-y-z & x-z & y+x-w-z\\
+0 & y-z & x+y-w-z
+\end{vmatrix}
+\\\\
+=
+(x+y+z+w)(x+w-y-z)(y+x-w-z)
+\begin{vmatrix}
+1 & w-z & 0\\
+1 & x-z & 1\\
+0 & y-z & 1
+\end{vmatrix}\\\\
+=
+(x+y+z+w)(x+w-y-z)(y+x-w-z)
+\begin{vmatrix}
+1 & w-z & 0\\
+0 & x-w & 1\\
+0 & y-z & 1
+\end{vmatrix}\\\\
+=
+(x+y+z+w)(x+w-y-z)(y+x-w-z)(x+z-w-y)\end{gather*}</script><h3 id="例-9-拆分法"><a href="#例-9-拆分法" class="headerlink" title="例 9 (拆分法)"></a>例 9 (拆分法)</h3><script type="math/tex; mode=display">
+|A|=
+\begin{vmatrix}
+ax+by & ay + bz & az + bx\\
+ay+bz & az+bx & ax+by\\
+az+bx & ax+by & ay+bz
+\end{vmatrix}</script><script type="math/tex; mode=display">
+\begin{gather*}|B|=\begin{vmatrix}
+ax & ay + bz & az + bx\\
+ay & az+bx & ax+by\\
+az & ax+by & ay+bz
+\end{vmatrix},|C|=\begin{vmatrix}
+by & ay + bz & az + bx\\
+bz & az+bx & ax+by\\
+bx & ax+by & ay+bz
+\end{vmatrix}\\
+|A|=|B|+|C|\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}|B|的第一列\times -\cfrac{b}{a}加到第三列,第三列\times -\cfrac{b}{a} \\
+|B|=\begin{vmatrix}
+ax & ay + bz & az\\
+ay & az+bx & ax\\
+az & ax+by & ay
+\end{vmatrix}=\begin{vmatrix}
+ax & ay & az\\
+ay & az& ax\\
+az & ax& ay
+\end{vmatrix}=a^3\cdot \begin{vmatrix}
+x & y & z\\
+y & z& x\\
+z & x& y
+\end{vmatrix}\\
+同理|C|的第一列\times -\cfrac{-b}{a}加到第二列,第二列\times -\cfrac{a}{b}加到第三列 \\
+|C|=\begin{vmatrix}
+by & bz & az + bx\\
+bz & bx & ax+by\\
+bx & by & ay+bz
+\end{vmatrix}
+=
+\begin{vmatrix}
+by & bz & bx\\
+bz & bx & by\\
+bx & by & bz
+\end{vmatrix}=b^3\cdot \begin{vmatrix}
+x & y & z\\
+y & z& x\\
+z & x& y
+\end{vmatrix}\\
+|B|+|C|=(a^3+b^3)\begin{vmatrix}
+x & y & z\\
+y & z& x\\
+z & x& y
+\end{vmatrix}\end{gather*}</script><h3 id="例10-综合应用"><a href="#例10-综合应用" class="headerlink" title="例10 (综合应用)"></a>例10 (综合应用)</h3><script type="math/tex; mode=display">
+证明|A|=
+\begin{vmatrix}
+(a+b)^2 & c^2 & c^2\\
+a^2 & (b+c)^2 & a^2\\
+b^2 & b^2 & (a+c)^2
+\end{vmatrix}=(a+b+c)^3\cdot 2abc</script><script type="math/tex; mode=display">
+\begin{gather*}观察可发现，第2列和第1，3列可以构成完全平方\\
+|A|=\begin{vmatrix}
+(a+b)^2-c^2 & c^2 & 0\\
+a^2-(b+c)^2 & (b+c)^2 & a^2-(b+c)^2 \\
+0 & b^2 & (a+c)^2-b^2
+\end{vmatrix}
+\\\\
+=
+(a+b+c)\cdot 
+\begin{vmatrix}
+a+b-c & c^2 & 0\\
+a-b-c & (b+c)^2 & a^2-(b+c)^2 \\
+0 & b^2 & (a+c)^2-b^2
+\end{vmatrix}
+\\\\
+=(a+b+c)^2\cdot 
+\begin{vmatrix}
+a+b-c & c^2 & 0\\
+a-b-c & (b+c)^2 & a-b-c \\
+0 & b^2 & a+c-b
+\end{vmatrix}\\\\
+=
+(a+b+c)^2\cdot 
+\begin{vmatrix}
+a+b-c & c^2 & 0\\
+-2b & 2bc & -2c \\
+0 & b^2 & a+c-b
+\end{vmatrix}\\
+1,3列分别乘c/2,b/2加到2列\\
+=
+(a+b+c)^2\cdot 
+\begin{vmatrix}
+a+b-c & \cfrac{c}{2}(a+b+c) & 0\\
+-2b & 0 & -2c \\
+0 & \cfrac{b}{2}(a+b+c) & a+c-b
+\end{vmatrix}\\\\
+=
+(a+b+c)^3\cdot 
+\begin{vmatrix}
+a+b-c & \cfrac{c}{2} & 0\\
+-2b & 0 & -2c \\
+0 & \cfrac{b}{2} & a+c-b
+\end{vmatrix}\\
+\\
+=(a+b+c)^3\cdot 2abc\end{gather*}</script><h3 id="1-5-节习题"><a href="#1-5-节习题" class="headerlink" title="1.5 节习题"></a>1.5 节习题</h3><p>例1</p>
+<script type="math/tex; mode=display">
+\text { 设 } b_{i j}=\left(a_{i 1}+a_{i 2}+\cdots+a_{i n}\right)-a_{i j} \text {, 求证: }</script><script type="math/tex; mode=display">
+\left|\begin{array}{ccc}
+b_{11} & \cdots & b_{1 n} \\
+\vdots & & \vdots \\
+b_{n 1} & \cdots & b_{n n}
+\end{array}\right|=(-1)^{n-1}(n-1)\left|\begin{array}{ccc}
+a_{11} & \cdots & a_{1 n} \\
+\vdots & & \vdots \\
+a_{n 1} & \cdots & a_{n n}
+\end{array}\right|</script><script type="math/tex; mode=display">
+\begin{gather*}把2到n列相加后可得到(n-1)\cdot(a_{i1}+a_{i2}+\cdots a_{in})-(a_{i2}+a_{i3}+\cdots a_{in})\\
+相当于把2到n列加到第一列上\\
+第一列变成(n-1)\cdot(a_{i1}+a_{i2}+\cdots a_{in}),提出n-1\\
+再把第一列加到2到n列上,再把2到n列加到第一列上\\
+可发现此时矩阵变成了除了第一列，前面都带符号，提出(-1)^{n-1}\\
+即可得到(n-1)\cdot (-1)^{n-1}\cdot |A|=|B|\end{gather*}</script><p>例2</p>
+<script type="math/tex; mode=display">
+\begin{gather*}计算下列  n  阶行列式:\\
+
+\boldsymbol{A}|=| \begin{vmatrix}
+a & 0 & \cdots & 0 & 1 \\
+0 & a & \cdots & 0 & 0 \\
+\vdots & \vdots & & \vdots & \vdots \\
+0 & 0 & \cdots & a & 0 \\
+1 & 0 & \cdots & 0 & a
+\end{vmatrix} \mid .
+
+解 按第一列展开, 经计算得\\\\
+
+|\boldsymbol{A}|=a^{n}+(-1)^{n+1}\left|\begin{array}{ccccc}
+0 & 0 & \cdots & 0 & 1 \\
+a & 0 & \cdots & 0 & 0 \\
+\vdots & \vdots & & \vdots & \vdots \\
+0 & 0 & \cdots & a & 0
+\end{array}\right|=a^{n}-a^{n-2}\end{gather*}</script><p>例3</p>
+<script type="math/tex; mode=display">
+\begin{gather*}计算下列行列式:\\
+|A|=\left|\begin{array}{ccccc}
+1 & 2 & 3 & \cdots & n \\
+-1 & 0 & 3 & \cdots & n \\
+-1 & -2 & 0 & \cdots & n \\
+\vdots & \vdots & \vdots & & \vdots \\
+-1 & -2 & -3 & \cdots & 0
+\end{array}\right|\end{gather*}</script><script type="math/tex; mode=display">
+把第一行加到2到n行上，可得到上三角行列式\\
+|A|=n!</script><p>例4</p>
+<script type="math/tex; mode=display">
+\begin{gather*}|\boldsymbol{A}|=\left|\begin{array}{cccc}
+1 & 1 & \cdots & 1 \\
+1 & \mathrm{C}_{2}^{1} & \cdots & \mathrm{C}_{n}^{1} \\
+1 & \mathrm{C}_{3}^{2} & \cdots & \mathrm{C}_{n+1}^{2} \\
+\vdots & \vdots & & \vdots \\
+1 & \mathrm{C}_{n}^{n-1} & \cdots & \mathrm{C}_{2 n-2}^{n-1}
+\end{array}\right|
+\\
+从最后一行起将  |\boldsymbol{A}|  的每一行减去前面一行便可将行列式降一阶, \\降阶 后每一列减去前面一列. 再对降了一阶的行列式作同样处理\\
+不断作下去可得 到  |\boldsymbol{A}|=1\\\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}具体思路:\\
+观察(n,n)元素\\
+若让每一行减去上一行后\\
+观察元素(n,n)=C_{2n-2}^{n-1}-C_{2n-3}^{n-2}=C_{2n-3}^{n-1}+C_{2n-3}^{n-2}+C_{2n-3}^{n-2}=C_{2n-3}^{n-1}\\
+此时(n,n-1)变成了C_{2n-4}^{n-2}\\\\
+若让每一列减去上一列\\
+(n,n)=C_{2n-3}^{n-1}-C_{2n-4}^{n-1}=C_{2n-4}^{n-1}+C_{2n-4}^{n-2}-C_{2n-4}^{n-1}=C_{2n-4}^{n-2}\\
+可发现如此一来(n,n)元素变成了(n-1,n-1)元素\\
+按照此步骤进行下去可化简成\\
+|A|=\begin{vmatrix}
+1 & 1\\
+1 & C^{1}_2
+
+\end{vmatrix}=1\end{gather*}</script><p>例5</p>
+<script type="math/tex; mode=display">
+A=\left|\begin{array}{ccccc}
+1 & a_{1} & a_{2} & \cdots & a_{n} \\
+1 & a_{1}+b_{1} & a_{2} & \cdots & a_{n} \\
+1 & a_{1} & a_{2}+b_{2} & \cdots & a_{n} \\
+\vdots & \vdots & \vdots & & \vdots \\
+1 & a_{1} & a_{2} & \cdots & a_{n}+b_{n}
+\end{array}\right|=b_{1} b_{2} \cdots b_{n}</script><script type="math/tex; mode=display">
+分别将2到n行减去第一行,可得到下三角行列式</script><p>例6</p>
+<script type="math/tex; mode=display">
+\begin{gather*}|\boldsymbol{A}|=\left|\begin{array}{ccccc}
+a_{1}^{n-1} & a_{1}^{n-2} b_{1} & \cdots & a_{1} b_{1}^{n-2} & b_{1}^{n-1} \\
+a_{2}^{n-1} & a_{2}^{n-2} b_{2} & \cdots & a_{2} b_{2}^{n-2} & b_{2}^{n-1} \\
+\vdots & \vdots & & \vdots & \vdots \\
+a_{n}^{n-1} & a_{n}^{n-2} b_{n} & \cdots & a_{n} b_{n}^{n-2} & b_{n}^{n-1}
+\end{array}\right| .\\
+
+解 若所有的  a_{i}  都不为零, 则从第  i  行提出公因子  a_{i}^{n-1}(i=1,2, \cdots, n) ,\\得到 的行列式是一个 Vander Monde 行列式, 因此原行列式的值为\\
+
+|\boldsymbol{A}|=\prod_{i=1}^{n} a_{i}^{n-1} \cdot \prod_{1 \leq i<j \leq n}\left(\frac{b_{j}}{a_{j}}-\frac{b_{i}}{a_{i}}\right)=\prod_{1 \leq i<j \leq n}\left(a_{i} b_{j}-a_{j} b_{i}\right) .\\
+
+若只有一个  a_{i}=0 , 则按第  i  行进行展开, 得到的行列式是具有相同类型的  n-1  阶 行列式. \\若至少有两个  a_{i}=a_{j}=0 , 则第  i  行与第  j  行成比例, 因此行列式的值等于 零. \\经过简单的计算发现, 后面两种情形的答案都可以统一到第一种情形的答案.\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}观察\prod_{1 \leq i<j \leq n}\left(\frac{b_{j}}{a_{j}}-\frac{b_{i}}{a_{i}}\right)\\
+可化简成\prod_{1 \leq i<j \leq n}\left(\cfrac{a_ib_j-a_jb_i}{a_ia_j} \right)可知每一项a_i都和(n-1)个a_j组合\quad j\neq i\\
+共组合了(n-1)次，即a_i^{n-1},可以正好和\prod_{i=1}^{n} a_{i}^{n-1}消掉\end{gather*}</script><p>例7</p>
+<script type="math/tex; mode=display">
+\begin{gather*}设  f_{i}(x)(i=1,2, \cdots, n)  是次数不超过  n-2  的多项式\\
+求证: 对任意  n  个 数  a_{1}, a_{2}, \cdots, a_{n} , 均有\\
+
+\left|\begin{array}{cccc}
+f_{1}\left(a_{1}\right) & f_{1}\left(a_{2}\right) & \cdots & f_{1}\left(a_{n}\right) \\
+f_{2}\left(a_{1}\right) & f_{2}\left(a_{2}\right) & \cdots & f_{2}\left(a_{n}\right) \\
+\vdots & \vdots & & \vdots \\
+f_{n}\left(a_{1}\right) & f_{n}\left(a_{2}\right) & \cdots & f_{n}\left(a_{n}\right)
+\end{array}\right|=0\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}利用拆分法把每一项差分，知道拆成每个元素都为单项\\
+可知次数为n-2多项式，可以拆分成n-1项\\
+行列式为n阶，那么根据鹊巢原理，必然有两列互相成比例\\
+那么各个行列式为0\end{gather*}</script><h2 id="1-6-行列式的等价定义"><a href="#1-6-行列式的等价定义" class="headerlink" title="1.6 行列式的等价定义"></a>1.6 行列式的等价定义</h2><h3 id="定义1-排列和逆序数"><a href="#定义1-排列和逆序数" class="headerlink" title="定义1 排列和逆序数"></a>定义1 排列和逆序数</h3><script type="math/tex; mode=display">
+排列:\\
+记由1,2,\cdots,n组成的所有序列的集合为S_n(全排列全体)\\
+S_n共有=n!种选法</script><script type="math/tex; mode=display">
+\begin{gather*}我们称n个数1,2,\dots,n的排列(1,2,\cdots,n)为常序排列\\即数字从小到大的排列为常序排列\\
+如果在一个排序中j排在i之前，且j>i则称i,j为一对逆序对记为(j,i)\\
+一个排列中逆序对的总个数称为这个排序的逆序数\end{gather*}</script><p>逆序数的求法</p>
+<script type="math/tex; mode=display">
+\begin{gather*}设排列(k_1,k_2,\cdots,k_n)先看k_1后面有多少个小于k_1，令其为m_1\\
+依次类推\\
+m_1+m_2+\cdots+m_{n-1}即为排列(k_1,k_2,\cdots,k_n)的逆序数\\
+通常记为N(k_1,k_2,\cdots,k_n)=\sum_{i=1}^{n-1}m_i \\
+特别的,常排列的逆序数为0\end{gather*}</script><h3 id="定义2-奇偶排列"><a href="#定义2-奇偶排列" class="headerlink" title="定义2 奇偶排列"></a>定义2 奇偶排列</h3><script type="math/tex; mode=display">
+\begin{gather*}若排列(k_1,k_2,\cdots,k_n)的逆序对为偶数(包括0)，则称之为偶排列\\
+若是奇数，则称其为奇排列\end{gather*}</script><h3 id="引理-1"><a href="#引理-1" class="headerlink" title="引理(1)"></a>引理(1)</h3><script type="math/tex; mode=display">
+\begin{gather*}引理(1):\\
+令(k_1,k_2,\cdots,k_n)\in S_n\\若将其中k_i与k_j对换位置，其余数位置不变，则排列的逆序数奇偶性发生变化\\
+即,奇\Longrightarrow 偶,偶\Longrightarrow 奇\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}证明:\\
+\text{Case 1}:对换两个相邻的元素，k_i,k_{i+1}\\
+若k_i>k_{i+1}，可知m'_i=m_i-1,m'_{i+1}=m_i,则总体逆序数减少1\\
+若k_i<k_{i+1}，可知m'_i=m_i,m'_{i+1}=m_i+1，则总体逆序数增加1\\
+\text{Case 2}:一般情况下，对调任意k_i,k_j\\
+i,i+1,\cdots j-1,j\\
+经过j-i此交换后:\\
+i + 1,\cdots,j-1,j,i\\
+经过j-1-i次交换\\
+j,i+1,\cdots,j-1,i\\
+总过经过2(j-i)-1次，即奇数次交换,那么根据\text{Case 1}可知，排列的奇偶性发生变化\\
+Q.E.D\end{gather*}</script><h3 id="引理-2-1"><a href="#引理-2-1" class="headerlink" title="引理(2)"></a>引理(2)</h3><script type="math/tex; mode=display">
+\begin{gather*}引理(2)
+\\
+若n\geq 2,则S_n中的奇排列和偶排列各占一半\\
+令S_n奇排列的个数为p个，偶排列的个数为q个\\
+对换所有奇排列的k_1,k_2,由引理(1)可知，这些奇排列变成互不相同的偶排列\\
+那么此时S_n中至少有p个偶排列,注意:这\{p个偶排列\}\subseteq \{S_n的偶排列 \}\\
+可得到p\leq q\\
+同理若对于所有S_n中的偶排列对换k_1,k_2\\
+可得q\leq p\\
+即q=p\end{gather*}</script><h3 id="引理-3-1"><a href="#引理-3-1" class="headerlink" title="引理(3)"></a>引理(3)</h3><script type="math/tex; mode=display">
+\begin{gather*}引理(3) \\令(k_1,k_2,\cdots,k_n)\in S_n,则通过N(k_1,k_2,\cdots,k_n)次相邻对换后\\
+可将(k_1,k_2,\cdots,k_n)变为常序排列\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}证明:\\
+当n=1时，N(k_1)=0，显然成立\\
+假设n-1成立\\
+令k_i=n，考虑下列排列\\
+(k_1,\cdots,k_{i-1},k_i,k_{i+1},\cdots,k_n)可以通过n-i次相邻对换变成下列排列\\
+(k_1,\cdots,k_{i-1},k_{i+1},\cdots,k_n,k_i)\\\\
+\begin{aligned}
+&(1)\quad 可知(k_1,\cdots,k_{i-1},k_{i+1},\cdots,k_n)\in S_{n-1}\\
+&(2)\quad 可知N(k_1,\cdots,k_{i-1},k_i,k_{i+1},\cdots,k_n)=N(k_1,\cdots,k_{i-1},k_{i+1},\cdots,k_n)+n-i
+\end{aligned}\\\\
+根据假设n-1成立\\
+则(k_1,\cdots,k_{i-1},k_{i+1},\cdots,k_n)经过N(k_1,\cdots,k_{i-1},k_{i+1},\cdots,k_n)次对换\\得到1,2,\cdots,n-1\\
+根据(1),(2)可知若先对(k_1,\cdots,k_{i-1},k_i,k_{i+1},\cdots,k_n)进行n-i次对换把k_i换到最后面\\
+再对(k_1,\cdots,k_{i-1},k_{i+1},\cdots,k_n)进行排序后得到(1,2,\cdots,n-1,n)常序排列\\
+则一同进行了N(k_1,\cdots,k_{i-1},k_{i+1},\cdots,k_n)+n-i次对换\\
+由(2)可知N(k_1,\cdots,k_{i-1},k_i,k_{i+1},\cdots,k_n)=N(k_1,\cdots,k_{i-1},k_{i+1},\cdots,k_n)+n-i\\
+即把任意(k_1,\cdots,k_{i-1},k_i,k_{i+1},\cdots,k_n)\in S_n变成常序排列\\需要N(k_1,\cdots,k_{i-1},k_i,k_{i+1},\cdots,k_n)次对换\\
+Q.E.D\end{gather*}</script><p>例</p>
+<script type="math/tex; mode=display">
+\begin{gather*}由此例可以引出逆序数和常排列间的直观意义\\
+N(4,1,3,5,2)=5\\
+若对(4,1,3,5,2)排序\\
+把5放到最后(4,1,3,2,5),1次对换\\
+把4放到倒数第二位(1,3,2,4,5),3次对换\\
+移动3(1,2,3,4,5),1次对换\\
+1+3+1=5=N(4,1,3,5,2)\end{gather*}</script><h3 id="用3阶行列式引出组合定义"><a href="#用3阶行列式引出组合定义" class="headerlink" title="用3阶行列式引出组合定义"></a>用3阶行列式引出组合定义</h3><script type="math/tex; mode=display">
+\begin{gather*}|\boldsymbol{A}|=\left|\begin{array}{lll}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33}
+\end{array}\right|\\
+用拆分法拆分\\
+|A|=\left|\begin{array}{ccc}
+a_{11} & a_{12} & a_{13} \\
+0 & a_{22} & a_{23} \\
+0 & a_{32} & a_{33}
+\end{array}\right|+\left|\begin{array}{ccc}
+0 & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+0 & a_{32} & a_{33}
+\end{array}\right|+\left|\begin{array}{ccc}
+0 & a_{12} & a_{13} \\
+0 & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33}
+\end{array}\right|\\
+继续拆分第一项\\\end{gather*}</script><script type="math/tex; mode=display">
+\begin{array}{l}
+\left|\begin{array}{ccc}
+a_{11} & a_{12} & a_{13} \\
+0 & a_{22} & a_{23} \\
+0 & a_{32} & a_{33}
+\end{array}\right|=\left|\begin{array}{ccc}
+a_{11} & a_{12} & a_{13} \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{array}\right|+\left|\begin{array}{ccc}
+a_{11} & a_{12} & 0 \\
+0 & 0 & a_{23} \\
+0 & 0 & 0
+\end{array}\right|+\left|\begin{array}{ccc}
+a_{11} & a_{12} & 0 \\
+0 & 0 & 0 \\
+0 & 0 & a_{33}
+\end{array}\right|\\
++\left|\begin{array}{ccc}
+a_{11} & 0 & a_{13} \\
+0 & a_{22} & 0 \\
+0 & 0 & 0
+\end{array}\right|+\left|\begin{array}{ccc}
+a_{11} & 0 & 0 \\
+0 & a_{22} & a_{23} \\
+0 & 0 & 0
+\end{array}\right|+\left|\begin{array}{ccc}
+a_{11} & 0 & 0 \\
+0 & a_{22} & 0 \\
+0 & 0 & a_{33}
+\end{array}\right|\\
++\left|\begin{array}{ccc}
+a_{11} & 0 & a_{13} \\
+0 & 0 & 0 \\
+0 & a_{32} & 0
+\end{array}\right|+\left|\begin{array}{ccc}
+a_{11} & 0 & 0 \\
+0 & 0 & a_{23} \\
+0 & a_{32} & 0
+\end{array}\right|+\left|\begin{array}{ccc}
+a_{11} & 0 & 0 \\
+0 & 0 & 0 \\
+0 & a_{32} & a_{33}
+\end{array}\right| 
+\end{array}\\</script><script type="math/tex; mode=display">
+\begin{gather*}再按照每列提取出公因子\\
+\left|\begin{array}{ccc}
+a_{11} & a_{12} & a_{13} \\
+0 & a_{22} & a_{23} \\
+0 & a_{32} & a_{33}
+\end{array}\right|=a_{11} a_{12} a_{13}\left|\begin{array}{ccc}
+1 & 1 & 1 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{array}\right|+a_{11} a_{12} a_{23}\left|\begin{array}{lll}
+1 & 1 & 0 \\
+0 & 0 & 1 \\
+0 & 0 & 0
+\end{array}\right|+a_{11} a_{12} a_{33}\left|\begin{array}{ccc}
+1 & 1 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 1
+\end{array}\right|\\
+\begin{array}{l}
++a_{11} a_{22} a_{13}\left|\begin{array}{lll}
+1 & 0 & 1 \\
+0 & 1 & 0 \\
+0 & 0 & 0
+\end{array}\right|+a_{11} a_{22} a_{23}\left|\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 1 \\
+0 & 0 & 0
+\end{array}\right|+a_{11} a_{22} a_{33}\left|\begin{array}{lll}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{array}\right| \\
++a_{11} a_{32} a_{13}\left|\begin{array}{lll}
+1 & 0 & 1 \\
+0 & 0 & 0 \\
+0 & 1 & 0
+\end{array}\right|+a_{11} a_{32} a_{23}\left|\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+0 & 1 & 0
+\end{array}\right|+a_{11} a_{32} a_{33}\left|\begin{array}{lll}
+1 & 0 & 0 \\
+0 & 0 & 0 \\
+0 & 1 & 1
+\end{array}\right| .
+\end{array}\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}根据行列式性质，两行对应成比例则行列式=0\\
+最终可得到\\
+\left|\begin{array}{ccc}
+a_{11} & a_{12} & a_{13} \\
+0 & a_{22} & a_{23} \\
+0 & a_{32} & a_{33}
+\end{array}\right|=a_{11} a_{22} a_{33}-a_{11} a_{32} a_{23}\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}同理最终可得到\\
+\begin{array}{lll}
+\left|\begin{array}{lll}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33}
+\end{array}\right|=  a_{11} a_{22} a_{33}+a_{21} a_{32} a_{13}+a_{31} a_{12} a_{23} 
+-a_{11} a_{32} a_{23}-a_{21} a_{12} a_{33}-a_{31} a_{22} a_{13} 
+\end{array}\\
+最后得到6项=3!\end{gather*}</script><h3 id="证明前的一些定义"><a href="#证明前的一些定义" class="headerlink" title="证明前的一些定义"></a>证明前的一些定义</h3><script type="math/tex; mode=display">
+\begin{gather*}我们可以把上述讨论推广到  n  阶行列式的情形. 为了叙述方便, 我们先做一 些约定. \\行列式第  j  列简记为  \boldsymbol{\alpha}_{j}(j=1,2, \cdots, n) .\\  |\boldsymbol{A}|  写为  \left|\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}\right| .\\ 又 用  e_{1}  表示由  n  个数组成的列, 其中第一个数为 1 , 其余为零\\即
+
+\boldsymbol{e}_{1}=\left(\begin{array}{c}
+1 \\
+0 \\
+\vdots \\
+0
+\end{array}\right) .\end{gather*}</script><script type="math/tex; mode=display">
+\boldsymbol{\alpha}_{1}=\left(\begin{array}{c}
+a_{11} \\
+a_{21} \\
+\vdots \\
+a_{n 1}
+\end{array}\right)=a_{11} \boldsymbol{e}_{1}+a_{21} e_{2}+\cdots+a_{n 1} \boldsymbol{e}_{n}=\sum_{i=1}^{n} a_{i 1} \boldsymbol{e}_{i}</script><script type="math/tex; mode=display">
+\boldsymbol{\alpha}_{j}=a_{1 j} \boldsymbol{e}_{1}+a_{2 j} \boldsymbol{e}_{2}+\cdots+a_{n j} \boldsymbol{e}_{n}=\sum_{i=1}^{n} a_{i j} \boldsymbol{e}_{i}</script><h3 id="定理-1-1"><a href="#定理-1-1" class="headerlink" title="定理(1)"></a>定理(1)</h3><script type="math/tex; mode=display">
+令|A|为n阶行列式，则有\\
+|A|=\sum_{(k_1,k_2,\cdots,k_m)\in S_n} (-1)^{N(k_1,k_2,\cdots,k_n)}a_{k_11}a_{k_22}\cdots a_{k_nn}</script><script type="math/tex; mode=display">
+利用拆分法可得\\\begin{aligned}
+|\boldsymbol{A}| &=\left|\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2} \cdots, \boldsymbol{\alpha}_{n}\right|=\left|\sum_{i=1}^{n} a_{i 1} \boldsymbol{e}_{i}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}\right| \\
+提出因子
+&=\sum_{i=1}^{n} a_{i 1}\left|\boldsymbol{e}_{i}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}\right| .
+\end{aligned}</script><script type="math/tex; mode=display">
+对行列式  \left|\boldsymbol{e}_{i}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}\right| , 由  \boldsymbol{\alpha}_{2}=\sum_{k=1}^{n} a_{k 2} \boldsymbol{e}_{k}  \\
+\left|\boldsymbol{e}_{i}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}\right|=\sum_{k=1}^{n} a_{k 2}\left|\boldsymbol{e}_{i}, \boldsymbol{e}_{k}, \cdots, \boldsymbol{\alpha}_{n}\right|</script><script type="math/tex; mode=display">
+\begin{gather*}于是
+
+|\boldsymbol{A}|=\sum_{i, k = 1}^n a_{i 1} a_{k 2}\left|\boldsymbol{e}_{i}, \boldsymbol{e}_{k}, \cdots, \boldsymbol{\alpha}_{n}\right| \\
+
+不断做下去即可得:
+
+|\boldsymbol{A}|=\sum_{1\leq k_{1}, k_{2}, \cdots, k_{n}\leq n} a_{k_{1} 1} a_{k_{2} 2} \cdots a_{k_{n} n}\left|\boldsymbol{e}_{k_{1}}, \boldsymbol{e}_{k_{2}}, \cdots, \boldsymbol{e}_{k_{n}}\right|\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}注意行列式  \left|e_{k_{1}}, \boldsymbol{e}_{k_{2}}, \cdots, \boldsymbol{e}_{k_{n}}\right| \\当  \boldsymbol{e}_{k_{i}}=\boldsymbol{e}_{k_{j}}  时其值为零.\\ 
+因此不为零的行列 式  \left|\boldsymbol{e}_{k_{1}}, \boldsymbol{e}_{k_{2}}, \cdots, \boldsymbol{e}_{k_{n}}\right|  \\
+必须适合条件:  k_{i} \neq k_{j} , 即  \left(k_{1}, k_{2}, \cdots, k_{n}\right)  是数  1,2, \cdots, n  的一个全排列\\或称  \left(k_{1}, k_{2}, \cdots, k_{n}\right)  是  1,2, \cdots, n  的一个置换. \\
+这时候, 行列 式  \left|e_{k_{1}}, \boldsymbol{e}_{k_{2}}, \cdots, \boldsymbol{e}_{k_{n}}\right|  \\是一个每一行和每一列都有且只有一个元素等于 1 , 其余元素都为零的行列式. \\显然, 经过若干次行或列的对换, 这样的行列式可以化为下列形状:\\
+
+\left|\begin{array}{cccc}
+1 & 0 & \cdots & 0 \\
+0 & 1 & \cdots & 0 \\
+\vdots & \vdots & & \vdots \\
+0 & 0 & \cdots & 1
+\end{array}\right| =1\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}显然根据前面的引理(3)可知:\\
+若想变成如上行列式，则需要进行N(k_1,k_2,\cdots,k_n)此行交换\\
+那么此行列式\left|e_{k_{1}}, \boldsymbol{e}_{k_{2}}, \cdots, \boldsymbol{e}_{k_{n}}\right|的符号为(-1)^{N(k_1,k_2,\cdots,k_n)}\end{gather*}</script><script type="math/tex; mode=display">
+综上\\
+|A|=\sum_{(k_1,k_2,\cdots,k_m)\in S_n} (-1)^{N(k_1,k_2,\cdots,k_n)}a_{k_11}a_{k_22}\cdots a_{k_nn}\\
+Q.E.D</script><script type="math/tex; mode=display">
+\begin{gather*}观察上列等价定义:\\
+可发现a_{k_11}a_{k_22}\cdots a_{k_nn}为从每一列各选出一个元素\\
+根据引理(2)可知:取正号的有\cfrac{1}{2}n!,取负号的有\cfrac{1}{2}n!\\
+其中(-1)^{N(k_1,k_2,\cdots,k_n)}表示选出元素按照行的排列顺序，每个元素映射(双射)到i行\end{gather*}</script><h3 id="引理-4"><a href="#引理-4" class="headerlink" title="引理(4)"></a>引理(4)</h3><script type="math/tex; mode=display">
+\begin{gather*}设(i_1,i_2,\cdots,i_n),(j_1,j_2,\cdots,j_n)\in S_n\\
+则a_{i_1,j_1}a_{i_2j_{2}}\cdots a_{i_nj_{n}}在|A|中的符号为\\
+(-1)^{N(i_1,i_2,\cdots,i_n)+N(j_1,j_2,\cdots,j_n)}\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}证明:\\
+把(i_1,i_2,\cdots,i_n)中的元素和(j_1,j_2,\cdots,j_n)绑定在一起\\
+(j_1,j_2,\cdots,j_n)通过N(j_1,j_2,\cdots,j_n)次相邻对换变成(1,2,3\cdots,n)\\
+相应的(i_1,i_2,\cdots,i_n)通过N(j_1,j_2,\cdots,j_n)对换变成(k_1,k_2,\cdots,k_n)\\
+此时a_{i_1,j_1}a_{i_2j_{2}}\cdots a_{i_nj_{n}}=a_{k_11}a_{k_2{2}}\cdots a_{k_n{n}}\\
+则原N(i_1,i_2,\cdots,i_n)通过N(j_1,j_2,\cdots,j_n)相邻兑换后\\奇偶性和变换后的N(k_1,k_2,\cdots,k_n)一样\\
+N(i_1,i_2,\cdots,i_n)+N(j_1,j_2,\cdots,j_n)\equiv N(k_1,k_2,\cdots,k_n)\bmod2\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}a_{k_11}a_{k_2{2}}\cdots a_{k_n{n}}相当于从每列选出一个元素进行相乘\\
+且a_{k_11}a_{k_2{2}}\cdots a_{k_n{n}}=a_{i_1j_1}a_{i_2j_{2}}\cdots a_{i_nj_{n}}\\
+根据定理(1)可知a_{k_11}a_{k_2{2}}\cdots a_{k_n{n}}的符号为(-1)^{N(k_1,k_2,\cdots,k_n)}=(-1)^{(i_1,i_2,\cdots,i_n)+N(j_1,j_2,\cdots,j_n)}\\
+Q.E.D\end{gather*}</script><h3 id="定理-1-的推论"><a href="#定理-1-的推论" class="headerlink" title="定理(1)的推论"></a>定理(1)的推论</h3><script type="math/tex; mode=display">
+\begin{gather*}令|A|为n阶行列式，则有\\
+\begin{aligned}
+|A|&=\sum_{(k_1,k_2,\cdots,k_m)\in S_n} (-1)^{N(k_1,k_2,\cdots,k_n)}a_{k_11}a_{k_22}\cdots a_{k_nn}\\
+&=\sum_{(k_1,\cdots,k_n)\in S_n}(-1)^{N(k_1,\cdots,k_n)}a_{1k_1}a_{2k_2}\cdots a_{nk_n}
+\end{aligned}\\每行按照排列顺序任选一个相乘\\
+证明:\\
+a_{1k_1}a_{2k_2}\cdots a_{nk_n}一定为行列式中的单项(按照排列顺序的单项乘积)\\
+
+根据引理(4):\\
+若把a_{1k_1}a_{2k_2}\cdots a_{nk_n}的下标看成两个排列\\
+N(1,2,3,\cdots,n)=0和(k_1,k_2,\cdots, k_n)\\
+则它的符号为(-1)^{0+(k_1,k_2,\cdots, k_n)}=(-1)^{(k_1,k_2,\cdots, k_n)}\quad (符号一样)\\
+有(k_1,k_2,\cdots,k_n)\in S_n有n!个\quad (数量一样)\\
+综上,两个\sum都为按照排列顺序的单项乘积，符号一样，且数量一样\\
+那么它们相等\\
+Q.E.D\end{gather*}</script><h3 id="1-6-习题"><a href="#1-6-习题" class="headerlink" title="1.6 习题"></a>1.6 习题</h3><p>例1</p>
+<script type="math/tex; mode=display">
+a_{1 n} a_{2, n-1} a_{3, n-3} \cdots a_{n 1} \text { 所带的符号. }\\
+(-1)^{N(n, n-1, n-2, \cdots, 1)}=(-1)^{\frac{n(n-1)}{2}}</script><p>例2</p>
+<script type="math/tex; mode=display">
+\begin{gather*}\text { 若一个 } n \text { 阶行列式中零元素的个数超过 } n^{2}-n \text { 个, 证明: 这个行列式的值等于零. }\\\\
+因为  |\boldsymbol{A}|  中零元素的个数超过  n^{2}-n  个\\由抽屉原理知  |\boldsymbol{A}|  至少有一列 其零元素的个数大于等于  \left[\frac{n^{2}-n}{n}\right]+1=n \\
+即  |\boldsymbol{A}|  至少有一列其元素全为零\\因 此  |\boldsymbol{A}|=0 .\end{gather*}</script><p>例3</p>
+<script type="math/tex; mode=display">
+\begin{gather*}设  f_{i j}(t)  是可微函数\\
+
+F(t)=\left|\begin{array}{cccc}
+f_{11}(t) & f_{12}(t) & \cdots & f_{1 n}(t) \\
+f_{21}(t) & f_{22}(t) & \cdots & f_{2 n}(t) \\
+\vdots & \vdots & & \vdots \\
+f_{n 1}(t) & f_{n 2}(t) & \cdots & f_{n n}(t)
+\end{array}\right|\\
+
+求证:  \frac{\mathrm{d}}{\mathrm{d} t} F(t)=\sum_{j=1}^{n} F_{j}(t) \\ 其中
+
+F_{j}(t)=\left|\begin{array}{cccccc}
+f_{11}(t) & f_{12}(t) & \cdots & \frac{\mathrm{d}}{\mathrm{d} t} f_{1 j}(t) & \cdots & f_{1 n}(t) \\
+f_{21}(t) & f_{22}(t) & \cdots & \frac{\mathrm{d}}{\mathrm{d} t} f_{2 j}(t) & \cdots & f_{2 n}(t) \\
+\vdots & \vdots & & \vdots & & \vdots \\
+f_{n 1}(t) & f_{n 2}(t) & \cdots & \frac{\mathrm{d}}{\mathrm{d} t} f_{n j}(t) & \cdots & f_{n n}(t)
+\end{array}\right| .\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}证明:\\
+  n=1  时显然成立. 假设n-1阶成立\\
+将  F(t)  按第一列展开:\\
+
+F(t)=f_{11}(t) A_{11}(t)+f_{21}(t) A_{21}(t)+\cdots+f_{n 1}(t) A_{n 1}(t)
+
+\\其中  A_{i 1}(t)  是元素  f_{i 1}(t)  的代数余子式.\\ 对上式两边求导数并记  A_{i j}^{k}(t)  为对  A_{i j}(t)  的第  k  列元素求导数后得到的行列式\\
+\mathbf{HINT}:A_{ij}为n-1阶的行列式 \\
+\begin{aligned}
+\frac{\mathrm{d}}{\mathrm{d} t} F(t) &=\frac{\mathrm{d}}{\mathrm{d} t}\left(\sum_{i=1}^{n} f_{i 1}(t) A_{i 1}(t)\right)=\sum_{i=1}^{n} f_{i 1}^{\prime}(t) A_{i 1}(t)+\sum_{i=1}^{n} f_{i 1}(t) A_{i 1}^{\prime}(t) \\
+&=F_{1}(t)+\sum_{i=1}^{n} f_{i 1}(t)\left(\sum_{k=1}^{n-1} A_{i 1}^{k}(t)\right)=F_{1}(t)+\sum_{k=1}^{n-1} \sum_{i=1}^{n} f_{i 1}(t) A_{i 1}^{k}(t) .
+\end{aligned}\\
+对\sum_{i=1}^{n} f_{i 1}(t) A_{i 1}^{k}(t) 进行展开可得:\\
+\begin{aligned}
+F_{2}(t)&=f_{11}(t) A_{11}^{1}(t)+f_{21}(t) A_{21}^{1}(t)+\cdots+f_{n 1}(t) A_{n 1}^{1}(t), \\
+& \ldots \cdots \cdots \\
+F_{n}(t)&= f_{11}(t) A_{11}^{n-1}(t)+f_{21}(t) A_{21}^{n-1}(t)+\cdots+f_{n 1}(t) A_{n 1}^{n-1}(t),
+\end{aligned}\end{gather*}</script><p>例4</p>
+<script type="math/tex; mode=display">
+\begin{gather*}f(x)=\left|\begin{array}{cccc}
+x-a_{11} & -a_{12} & \cdots & -a_{1 n} \\
+-a_{21} & x-a_{22} & \cdots & -a_{2 n} \\
+\vdots & \vdots & & \vdots \\
+-a_{n 1} & -a_{n 2} & \cdots & x-a_{n n}
+\end{array}\right|\\
+
+其中  x  是末知数,  a_{i j}  是常数.\\ 证明:  f(x)  是一个最高次项系数为 1 的  n  次多项式\\ 且其  n-1  次项的系数等于  -\left(a_{11}+a_{22}+\cdots+a_{n n}\right) .\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}根据行列式的组合定义可知，f(x)的最高次单项为主对角线乘积，显然最高次数为1\\
+考虑n-1次项出现在哪,显然出现在对角线乘积,那么对于非对角线乘积会出现n-1次项吗\\
+如果在对角线上选n-1个元素相乘，那么剩下的一个元素也必然在对角线上\\
+如果在对角线上选n-2个元素相乘\\那么剩下的两个元素可以不在对角线上，那么最高次数为n-2\\
+那么n-1次项只能出现在对角线乘积上，即-(a_{11}+a_{22}+\cdots+a_{nn})\\
+Q.E.D\end{gather*}</script><h2 id="1-7-Laplace定理"><a href="#1-7-Laplace定理" class="headerlink" title="1.7 Laplace定理"></a>1.7 Laplace定理</h2><script type="math/tex; mode=display">
+\begin{gather*}(Laplace 定理)\\ 设  |\boldsymbol{A}|  是  n  阶行列式, 在  |\boldsymbol{A}|  中任取  k  行 (列)\\那么含于这  k  行 (列) 的全部  k  阶子式与它们所对应的代数余子式的乘积之和等 于\\  |\boldsymbol{A}| . \\即若取定  k  个行:  1 \leq i_{1}<i_{2}<\cdots<i_{k} \leq n , 则
+\\
+|\boldsymbol{A}|=\sum_{1 \leq j_{1}<j_{2}<\cdots<j_{k} \leq n} \boldsymbol{A}\left(\begin{array}{cccc}
+i_{1} & i_{2} & \cdots & i_{k} \\
+j_{1} & j_{2} & \cdots & j_{k}
+\end{array}\right) \widehat{\boldsymbol{A}}\left(\begin{array}{cccc}
+i_{1} & i_{2} & \cdots & i_{k} \\
+j_{1} & j_{2} & \cdots & j_{k}
+\end{array}\right) \text {. }
+
+\\同样若取定  k  个列:  1 \leq j_{1}<j_{2}<\cdots<j_{k} \leq n , 则\\
+
+|\boldsymbol{A}|=\sum_{1 \leq i_{1}<i_{2}<\cdots<i_{k} \leq n} \boldsymbol{A}\left(\begin{array}{cccc}
+i_{1} & i_{2} & \cdots & i_{k} \\
+j_{1} & j_{2} & \cdots & j_{k}
+\end{array}\right) \widehat{\boldsymbol{A}}\left(\begin{array}{cccc}
+i_{1} & i_{2} & \cdots & i_{k} \\
+j_{1} & j_{2} & \cdots & j_{k}
+\end{array}\right)\end{gather*}</script><h3 id="n阶子式和其余子式"><a href="#n阶子式和其余子式" class="headerlink" title="n阶子式和其余子式"></a>n阶子式和其余子式</h3><script type="math/tex; mode=display">
+\begin{gather*}1 \leq i_{1}<i_{2}<\cdots<i_{k} \leq n ; 1 \leq j_{1}<j_{2}<\cdots<j_{k} \leq n\\
+
+取行列式  |\boldsymbol{A}|  中第  i_{1}  行, 第  i_{2}  行,  \cdots , 第  i_{k}  行\\以及第  j_{1}  列, 第  j_{2}  列,  \cdots , 第  j_{k}  列\\交点上的元素, 按原来  |\boldsymbol{A}|  中的相对位置构成一个  k  阶行列式. \\我们称之为  |\boldsymbol{A}|  的一个  k  阶子式, 记为
+
+\boldsymbol{A}\left(\begin{array}{cccc}
+i_{1} & i_{2} & \cdots & i_{k} \\
+j_{1} & j_{2} & \cdots & j_{k}
+\end{array}\right)\end{gather*}</script><script type="math/tex; mode=display">
+把这个子式写出来就是:\\
+
+\left|\begin{array}{cccc}
+a_{i_{1} j_{1}} & a_{i_{1} j_{2}} & \cdots & a_{i_{1} j_{k}} \\
+a_{i_{2} j_{1}} & a_{i_{2} j_{2}} & \cdots & a_{i_{2} j_{k}} \\
+\vdots & \vdots & & \vdots \\
+a_{i_{k} j_{1}} & a_{i_{k} j_{2}} & \cdots & a_{i_{k} j_{k}}
+\end{array}\right|</script><script type="math/tex; mode=display">
+\begin{gather*}在行列式  |\boldsymbol{A}|  中去掉第  i_{1}  行, 第  i_{2}  行,  \cdots , 第  i_{k}  行\\以及第  j_{1}  列, 第  j_{2}  列,  \cdots , 第  j_{k}  列以后\\剩下的元素按原来的相对位置构成一个  n-k  阶行列式. \\这个行列式 称为子式  (1.7 .1)  的余子式, 记为
+
+M\left(\begin{array}{cccc}
+i_{1} & i_{2} & \cdots & i_{k} \\
+j_{1} & j_{2} & \cdots & j_{k}
+\end{array}\right)\\
+
+若令  p=i_{1}+i_{2}+\cdots+i_{k}, q=j_{1}+j_{2}+\cdots+j_{k} , 记\\
+
+\widehat{\boldsymbol{A}}\left(\begin{array}{cccc}
+i_{1} & i_{2} & \cdots & i_{k} \\
+j_{1} & j_{2} & \cdots & j_{k}
+\end{array}\right)=(-1)^{p+q} M\left(\begin{array}{cccc}
+i_{1} & i_{2} & \cdots & i_{k} \\
+j_{1} & j_{2} & \cdots & j_{k}
+\end{array}\right)\end{gather*}</script><h3 id="4阶行列式例子"><a href="#4阶行列式例子" class="headerlink" title="4阶行列式例子"></a>4阶行列式例子</h3><script type="math/tex; mode=display">
+\left|\begin{array}{cccc}
+1 & 2 & -1 & 3 \\
+7 & 0 & 5 & 2 \\
+-2 & 4 & 6 & 1 \\
+2 & 3 & 1 & 4
+\end{array}\right|</script><script type="math/tex; mode=display">
+\begin{gather*}若固定其第二、第三行, 则共有  \mathrm{C}_{4}^{2}(=6)  个二阶子式:\\
+
+\begin{aligned}
+\boldsymbol{A}\left(\begin{array}{ll}
+2 & 3 \\
+1 & 2
+\end{array}\right) &=\left|\begin{array}{cc}
+7 & 0 \\
+-2 & 4
+\end{array}\right|, \quad \boldsymbol{A}\left(\begin{array}{ll}
+2 & 3 \\
+1 & 3
+\end{array}\right)=\left|\begin{array}{cc}
+7 & 5 \\
+-2 & 6
+\end{array}\right| \\
+\boldsymbol{A}\left(\begin{array}{ll}
+2 & 3 \\
+1 & 4
+\end{array}\right) &=\left|\begin{array}{cc}
+7 & 2 \\
+-2 & 1
+\end{array}\right|, \quad \boldsymbol{A}\left(\begin{array}{ll}
+2 & 3 \\
+2 & 3
+\end{array}\right)=\left|\begin{array}{ll}
+0 & 5 \\
+4 & 6
+\end{array}\right| \\
+\boldsymbol{A}\left(\begin{array}{ll}
+2 & 3 \\
+2 & 4
+\end{array}\right) &=\left|\begin{array}{ll}
+0 & 2 \\
+4 & 1
+\end{array}\right|, \quad \boldsymbol{A}\left(\begin{array}{ll}
+2 & 3 \\
+3 & 4
+\end{array}\right)
+\end{aligned}\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}这 6 个子式相对应的代数余子式为\\
+
+\begin{array}{l}
+\widehat{\boldsymbol{A}}\left(\begin{array}{ll}
+2 & 3 \\
+1 & 2
+\end{array}\right)=(-1)^{2+3+1+2}\left|\begin{array}{cc}
+-1 & 3 \\
+1 & 4
+\end{array}\right|=\left|\begin{array}{cc}
+-1 & 3 \\
+1 & 4
+\end{array}\right| \\
+\widehat{\boldsymbol{A}}\left(\begin{array}{ll}
+2 & 3 \\
+1 & 3
+\end{array}\right)=(-1)^{2+3+1+3}\left|\begin{array}{ll}
+2 & 3 \\
+3 & 4
+\end{array}\right|=\left|\begin{array}{ll}
+2 & 3 \\
+3 & 4
+\end{array}\right| \\
+\widehat{\boldsymbol{A}}\left(\begin{array}{ll}
+2 & 3 \\
+1 & 4
+\end{array}\right)=(-1)^{2+3+1+4}\left|\begin{array}{cc}
+2 & -1 \\
+3 & 1
+\end{array}\right|=\left|\begin{array}{cc}
+2 & -1 \\
+3 & 1
+\end{array}\right| \\
+\widehat{\boldsymbol{A}}\left(\begin{array}{ll}
+2 & 3 \\
+2 & 3
+\end{array}\right)=(-1)^{2+3+2+3}\left|\begin{array}{cc}
+1 & 3 \\
+2 & 4
+\end{array}\right|=\left|\begin{array}{ll}
+1 & 3 \\
+2 & 4
+\end{array}\right| \\
+\widehat{\boldsymbol{A}}\left(\begin{array}{ll}
+2 & 3 \\
+2 & 4
+\end{array}\right)=(-1)^{2+3+2+4}\left|\begin{array}{cc}
+1 & -1 \\
+2 & 1
+\end{array}\right|=-\left|\begin{array}{cc}
+1 & -1 \\
+2 & 1
+\end{array}\right| \\
+\widehat{\boldsymbol{A}}\left(\begin{array}{ll}
+2 & 3 \\
+3 & 4
+\end{array}\right)=(-1)^{2+3+3+4}\left|\begin{array}{ll}
+1 & 2 \\
+2 & 3
+\end{array}\right|=\left|\begin{array}{ll}
+1 & 2 \\
+2 & 3
+\end{array}\right|
+\end{array}\end{gather*}</script><p>则根据Laplace定理则有:</p>
+<script type="math/tex; mode=display">
+\begin{gather*}\begin{aligned}
+|\boldsymbol{A}|=&\left|\begin{array}{cc}
+7 & 0 \\
+-2 & 4
+\end{array}\right|\left|\begin{array}{cc}
+-1 & 3 \\
+1 & 4
+\end{array}\right|-\left|\begin{array}{cc}
+7 & 5 \\
+-2 & 6
+\end{array}\right|\left|\begin{array}{cc}
+2 & 3 \\
+3 & 4
+\end{array}\right|+\left|\begin{array}{cc}
+7 & 2 \\
+-2 & 1
+\end{array}\right|\left|\begin{array}{cc}
+2 & -1 \\
+3 & 1
+\end{array}\right| \\
+&+\left|\begin{array}{cc}
+0 & 5 \\
+4 & 6
+\end{array}\right|\left|\begin{array}{cc}
+1 & 3 \\
+2 & 4
+\end{array}\right|-\left|\begin{array}{cc}
+0 & 2 \\
+4 & 1
+\end{array}\right|\left|\begin{array}{cc}
+1 & -1 \\
+2 & 1
+\end{array}\right|+\left|\begin{array}{cc}
+5 & 2 \\
+6 & 1
+\end{array}\right|\left|\begin{array}{cc}
+1 & 2 \\
+2 & 3
+\end{array}\right| \\
+=& 28 \times(-7)-52 \times(-1)+11 \times 5+(-20) \times(-2) \\
+&-(-8) \times 3+(-7) \times(-1) \\
+=&-18 .
+\end{aligned}\end{gather*}</script><h3 id="证明定理"><a href="#证明定理" class="headerlink" title="证明定理"></a>证明定理</h3><script type="math/tex; mode=display">
+\begin{gather*}n  阶行列式共有  n  ! 项, 其中每一项如不考虑符号都由  n  个元素的积组成.\\
+若固定  |\boldsymbol{A}|  的  k  行 (或列), 则一共有  \mathrm{C}_{n}^{k}  个不同的 子式, 每一个子式完全展开后均含有  k  ! 项\\
+相应的余子式也有  \mathrm{C}_{n}^{k}  个, 每个余子式 完全展开后含有  (n-k)  ! 项. \\因此在 Laplace 定理中右 端一共有\\
+
+\mathrm{C}_{n}^{k} \cdot k !(n-k) !=\cfrac{n!}{(n-k)!\cdot k!}\cdot k !(n-k) !=n !\end{gather*}</script><h4 id="引理-1-1"><a href="#引理-1-1" class="headerlink" title="引理(1)"></a>引理(1)</h4><script type="math/tex; mode=display">
+\begin{gather*}引理(1):\\
+阶行列式  |\boldsymbol{A}|  的任一  k  阶子式与其代数余子式之积的展开式 中的每一项都属于  |\boldsymbol{A}|  的展开式.\\
+证明:\\
+\text{Case 1}:\\  i_{1}=1, i_{2}=2, \cdots, i_{k}=k ; j_{1}=1, j_{2}=   2, \cdots, j_{k}=k . \\这时  |\boldsymbol{A}|  可'写为
+
+\left|\begin{array}{cc}
+\boldsymbol{A}_{1} & * \\
+* & \boldsymbol{A}_{2}
+\end{array}\right|
+
+其中\\
+
+\begin{array}{c}
+\left|\boldsymbol{A}_{1}\right|=\boldsymbol{A}\left(\begin{array}{cccc}
+1 & 2 & \cdots & k \\
+1 & 2 & \cdots & k
+\end{array}\right)=\left|\begin{array}{ccc}
+a_{11} & \cdots & a_{1 k} \\
+\vdots & & \vdots \\
+a_{k 1} & \cdots & a_{k k}
+\end{array}\right| \\
+\left|\boldsymbol{A}_{2}\right|=\widehat{\boldsymbol{A}}\left(\begin{array}{cccc}
+1 & 2 & \cdots & k \\
+1 & 2 & \cdots & k
+\end{array}\right)=\left|\begin{array}{ccc}
+a_{k+1, k+1} & \cdots & a_{k+1, n} \\
+\vdots & & \vdots \\
+a_{n, k+1} & \cdots & a_{n n}
+\end{array}\right|
+\end{array}\end{gather*}</script><script type="math/tex; mode=display">
+根据行列式的组合定义\\
+|A_1|中的单项为(-1)^{N\left(j_{1}, j_{2}, \cdots, j_{k}\right)} a_{j_{1} 1} a_{j_{2} 2} \cdots a_{j_{k} k}</script><script type="math/tex; mode=display">
+|A_2|中的单项为:(-1)^{N\left(j_{k+1}, j_{k+2}, \cdots, j_{n}\right)} a_{j_{k+1}, k+1} a_{j_{k+2}, k+2} \cdots a_{j_{n}, n}</script><script type="math/tex; mode=display">
+\begin{gather*}所以
+
+\boldsymbol{A}\left(\begin{array}{cccc}
+1 & 2 & \cdots & k \\
+1 & 2 & \cdots & k
+\end{array}\right) \widehat{\boldsymbol{A}}\left(\begin{array}{cccc}
+1 & 2 & \cdots & k \\
+1 & 2 & \cdots & k
+\end{array}\right)
+
+中的任一项具有下列形式:\\
+
+(-1)^{\sigma} a_{j_{1} 1} a_{j_{2} 2} \cdots a_{j_{k} k} a_{j_{k+1}, k+1} \cdots a_{j_{n}, n}\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}其中  \sigma=N\left(j_{1}, \cdots, j_{k}\right)+N\left(j_{k+1}, \cdots, j_{n}\right) .\\ 注意  \left(j_{1}, \cdots, j_{k}\right)  是  (1, \cdots, k)  的一个 排列,  \left(j_{k+1}, \cdots, j_{n}\right)  是  (k+1, \cdots, n)  的一个排列\\因此  \left(j_{1}, \cdots, j_{k}, j_{k+1}, \cdots, j_{n}\right)  是  (1,2, \cdots, n)  的一个排列且\\
+
+N\left(j_{1}, \cdots, j_{k}, j_{k+1}, \cdots, j_{n}\right)=N\left(j_{1}, \cdots, j_{k}\right)+N\left(j_{k+1}, \cdots, j_{n}\right) .\end{gather*}</script><script type="math/tex; mode=display">
+所以(-1)^{\sigma} a_{j_{1} 1} a_{j_{2} 2} \cdots a_{j_{k} k} a_{j_{k+1}, k+1} \cdots a_{j_{n}, n}为|A|中的单项</script><script type="math/tex; mode=display">
+\text{Case 2:}\\</script><script type="math/tex; mode=display">
+\begin{gather*}令1 \leq i_{1}<i_{2}<\cdots<i_{k} \leq n ; 1 \leq j_{1}<j_{2}<\cdots<j_{k} \leq n\\
+
+显然, 经过  i_{1}-1  次相邻两行的对换, 可把第  i_{1}  行调到第一行. \\同理, 经过  i_{2}-2  次 对换, 可把第  i_{2}  行调至第二行,  \cdots \\ 经过了  \left(i_{1}+\cdots+i_{k}\right)-\frac{1}{2} k(k+1)  次对换即可把 第  i_{1}, i_{2}, \cdots, i_{k}  行调至前  k  行.\\ 同理, 经过  \left(j_{1}+\cdots+j_{k}\right)-\frac{1}{2} k(k+1)  次对换, 可将 第  j_{1}, j_{2}, \cdots, j_{k}  列调至前  k  列.\\ 因此,  |\boldsymbol{A}|  经过  \left(i_{1}+\cdots+i_{k}\right)+\left(j_{1}+\cdots+j_{k}\right)-k(k+1)  次行列的对换\\ 得到了一个新的行列式:\\
+
+|\boldsymbol{C}|=\left|\begin{array}{ll}
+\boldsymbol{D} & * \\
+* & \boldsymbol{B}
+\end{array}\right|\\\\
+
+其中
+
+|\boldsymbol{D}|=\boldsymbol{A}\left(\begin{array}{cccc}
+i_{1} & i_{2} & \cdots & i_{k} \\
+j_{1} & j_{2} & \cdots & j_{k}
+\end{array}\right)\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}显然  |\boldsymbol{C}|=(-1)^{p+q}|\boldsymbol{A}|, p=i_{1}+\cdots+i_{k},q=j_{1}+\cdots+j_{k}\quad (因为k(k+1)为偶数可以省略)\\
+|\boldsymbol{B}|  是子式  |\boldsymbol{D}|  在  |\boldsymbol{C}|  中的余子式\\
+|B|也是|A|的余子式,|B|= M\left(\begin{array}{cccc}
+i_{1} & i_{2} & \cdots & i_{k} \\
+j_{1} & j_{2} & \cdots & j_{k}
+\end{array}\right)\\\\
+
+由\text{Case 1}可知  |\boldsymbol{D} \| \boldsymbol{B}|  中的任一项都 是  |C|  中的项且符号保持一致. \\\\
+\begin{aligned}
+|A|
+&=\boldsymbol{A}\left(\begin{array}{cccc}
+i_{1} & i_{2} & \cdots & i_{k} \\
+j_{1} & j_{2} & \cdots & j_{k}
+\end{array}\right)\cdot \widehat{\boldsymbol{A}}\left(\begin{array}{cccc}
+i_{1} & i_{2} & \cdots & i_{k} \\
+j_{1} & j_{2} & \cdots & j_{k}
+\end{array}\right)\\\\
+&=\boldsymbol{A}\left(\begin{array}{cccc}
+i_{1} & i_{2} & \cdots & i_{k} \\
+j_{1} & j_{2} & \cdots & j_{k}
+\end{array}\right)\cdot (-1)^{p+q}\cdot\boldsymbol{M}\left(\begin{array}{cccc}
+i_{1} & i_{2} & \cdots & i_{k} \\
+j_{1} & j_{2} & \cdots & j_{k}
+\end{array}\right)\\\\
+&=|D|\cdot(-1)^{p+q}\cdot |B| \\
+
+\end{aligned}\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}因为|D|\cdot |B|为C中的任意单项且符号保持一致\\
+那么(-1)^{p+q}\cdot |D|\cdot |B|为C中的任一单项乘上(-1)^{p+q}\\
+
+综上|C|\cdot (-1)^{p+q}为|A|中的单项\\
+Q.E.D\end{gather*}</script><h4 id="引理-2-2"><a href="#引理-2-2" class="headerlink" title="引理(2)"></a>引理(2)</h4><script type="math/tex; mode=display">
+引理(2):\\
+右侧的展开项互不相同</script><script type="math/tex; mode=display">
+\begin{gather*}证明:\\
+固定行指标1\leq i_{1}<i_{2}<\cdots <i_k\leq n,余指标1\leq i_{k+1}<\cdots i_n\leq n\\
+选取两个列指标，并观察这两个列指标全排列构成的单项\\
+1\leq j_{1}<j_{2}<\cdots <j_k\leq n,余指标1\leq j_{k+1}<\cdots j_n\leq n\\
+1\leq \ell_{1}<\ell_{2}<\cdots <\ell_k\leq n,余指标1\leq \ell_{k+1}<\cdots \ell_n\leq n\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}取(j_1,j_2,\cdots j_k)的全排列(r_1,r_2,\cdots,r_n)\\映射到对应的余指标(j_{k+1},\cdots, j_n)的全排列(r_{k+1},\cdots ,r_n)\\\\
+取(\ell_1,\ell_2,\cdots \ell_k)的全排列(s_1,s_2,\cdots,s_n)\\映射到对应的余指标(\ell_{k+1},\cdots, \ell_n)的全排列(s_{k+1},\cdots ,s_n)\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}根据引理(1)得到单项展开式\\
+a_{i_1,r_1}a_{i_2,r_2}\cdots a_{i_k,r_k}a_{i_{k+1},r_{k+1}}\cdots a_{i_n,r_n}\\
+a_{i_1,s_1}a_{i_2,s_2}\cdots a_{i_k,s_k}a_{i_{k+1},s_{k+1}}\cdots a_{i_n,s_n}\\
+假设这两项相等\\
+则有\forall 1\leq t\leq n都有s_t=r_t\\
+s_t=r_t说明(j_1,j_2,\cdots j_k)=(\ell_{k+1},\cdots, \ell_n),即选取的j,\ell为相同排列\\
+即只有在选取的j和\ell指标相同时才会相等\\
+由因为|\boldsymbol{A}|=\sum_{1 \leq j_{1}<j_{2}<\cdots<j_{k} \leq n} \boldsymbol{A}\left(\begin{array}{cccc}
+i_{1} & i_{2} & \cdots & i_{k} \\
+j_{1} & j_{2} & \cdots & j_{k}
+\end{array}\right) \widehat{\boldsymbol{A}}\left(\begin{array}{cccc}
+i_{1} & i_{2} & \cdots & i_{k} \\
+j_{1} & j_{2} & \cdots & j_{k}
+\end{array}\right) \text {. }\\
+选取的(j_1,j_2,\cdots,j_k)的全排列并不会重复,所以右侧的展开项各不相同\\\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}综上根据:\\
+\mathrm{C}_{n}^{k} \cdot k !(n-k) !=\cfrac{n!}{(n-k)!\cdot k!}\cdot k !(n-k) !=n !\\
+引理(1)\\
+引理(2)\\
+\mathbf{Laplace}定理成立\\
+Q.E.D\end{gather*}</script><h3 id="Laplace定理推论"><a href="#Laplace定理推论" class="headerlink" title="Laplace定理推论"></a>Laplace定理推论</h3><script type="math/tex; mode=display">
+\begin{gather*}|A|=
+\begin{vmatrix}
+B &C\\
+0 & D
+\end{vmatrix}其中|B|为|A|的k阶子式，那么可知|C|为k\times (n-k)行列式\\
+同理|0|为(n-k)\times k阶行列式，|D|为(n-k)\times (n-k)阶行列式\\
+称|A|为分块上三角行列式\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}|A|=
+\begin{vmatrix}
+B &0\\
+C & D
+\end{vmatrix}其中|B|为|A|的k阶子式，那么可知|0|为k\times (n-k)行列式\\
+同理|C|为(n-k)\times k阶行列式，|D|为(n-k)\times (n-k)阶行列式\\
+称|A|为分块下三角行列式\end{gather*}</script><script type="math/tex; mode=display">
+\mathbf{Laplace定理}推论\\
+若|A|为分块上三角行列式或分块下三角行列式,则|A|=|B|\times |D|</script><script type="math/tex; mode=display">
+\begin{gather*}证明:\\
+对|A|=
+\begin{vmatrix}
+B &C\\
+0 & D
+\end{vmatrix}进行前k列Laplace展开\\
+可发现除了(i_1,i_2,\cdots,i_n)=(1,2,3,\cdots,k)时\boldsymbol{A}\left(\begin{array}{cccc}
+i_{1} & i_{2} & \cdots & i_{k} \\
+1 & 2 & \cdots & k
+\end{array}\right)=0\\
+因为必然会包括第i_{k+1}行和前k列的交点，而这些交点为0，根据行列式的性质，它们=0\\
+则只存在\boldsymbol{A}\left(\begin{array}{cccc}
+1 & 2& \cdots & k \\
+1 & 2 & \cdots & k
+\end{array}\right) \widehat{\boldsymbol{A}}\left(\begin{array}{cccc}
+1 & 2& \cdots & k \\
+1 & 2 & \cdots & k
+\end{array}\right) =|B|\times (-1)^{(1+k)\cdot k}|D|=|B|\times |D|\end{gather*}</script><script type="math/tex; mode=display">
+分块下三角行列式同理按照前k行进行Laplace展开即可证明\\
+Q.E.D</script><h2 id="1-4-定理-6-Cramen定理的推广"><a href="#1-4-定理-6-Cramen定理的推广" class="headerlink" title="1.4 定理(6) Cramen定理的推广"></a>1.4 定理(6) Cramen定理的推广</h2><h3 id="命题1"><a href="#命题1" class="headerlink" title="命题1"></a>命题1</h3><script type="math/tex; mode=display">
+\begin{gather*}命题:\\
+设多项式f(x)的次数\leq n,存在n +1个互相不同的b_1,b_2,\cdots,b_{n+1}\\使得f(b_i)=0\quad 1\leq i\leq n+1\\
+则f(x)=0\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}证明:\\
+令f(x)=a_nx^n+a_{n-1}x^{n-1}\cdots a_1x+a_0\\
+f(b_i)=a_nb_i^n+a_{n-1}b_i^{n-1}\cdots a_1b_i+a_0=0\\
+把b_i^k看作系数，a_j看成未知数\quad 0\leq k,j\leq n\\
+则把f(b_1)到f(b_n+1)看作一个方程组,则可以写成如下行列式:\\
+|A|=
+\begin{vmatrix}
+1 & b_{1} & b_{1}^2 & \cdots & b_{1}^n\\
+1 & b_{2} & b_{2}^2 & \cdots & b_{2}^n\\
+\cdots & \cdots & \cdots & \cdots & \cdots\\
+1 & b_{n+1} & b_{n+1}^2 & \cdots & b_{n+1}^n\\
+\end{vmatrix}为1.5节例5的\mathbf{Vander \  monde}行列式\\
+可知|A|=\prod _{1\leq i< j\leq n+1}(b_j-b_i)\\
+可知b_j和b_i一定互不相同则|A|\neq 0\\
+根据\mathbf{Cramen}定理可知|A|有唯一解\\
+a_0=a_1=a_2=\cdots=a_n=0显然为一组解,代入f(x)\\
+无论x取何值f(x)=0\\
+Q.E.D\end{gather*}</script><h3 id="命题2"><a href="#命题2" class="headerlink" title="命题2"></a>命题2</h3><script type="math/tex; mode=display">
+\begin{gather*}设f(x),g(x)都是次数\leq n的多项式,若存在n+1个不互相同的b_1,b_2,\cdots,b_{n+1}使得\\
+f(b_i)=g(b_i)\quad 1\leq i\leq n + 1,则f(x)\equiv g(x)\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}证明:\\
+令h(x)=f(x)-g(x)，则h(b_i)=0\quad 1\leq i\leq n + 1\\
+根据\mathbf{命题1}可知h(x)\equiv0,从而f(x)-g(x)\equiv 0\\
+则f(x)\equiv g(x)\\
+Q.E.D\end{gather*}</script><h3 id="命题3"><a href="#命题3" class="headerlink" title="命题3"></a>命题3</h3><script type="math/tex; mode=display">
+\begin{gather*}已知f(x)次数=n,并且有n+1个互不相同的数:b_1,b_2,\cdots,b_{n+1}且已知全部的f(b_i)\\
+则f(x)唯一确定(可以把x求出来)\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}证明:\\
+构造函数g(x)=\sum_{i=1}^{n+1}\bigg(f(b_i)\cdot \cfrac{(x-b_{1})\cdots (x-b_{i - 1})\cdot (x-b_{i + 1})\cdots (x-b_{n+1}) }{(b_i-b_{1})\cdots (b_i-b_{i-1})\cdot (b_i-b_{i+1})\cdots (b_i-b_{n+1})} \bigg)\\
+分子分母中不包含b_i\\
+因为b_1,b_2,\cdots ,b_{n+1}互不相同所以分母一定可能为0\\
+当x=b_i时g(x)中只剩下f(b_i)\\
+即可得到对于b_i\quad 1\leq i\leq n+1都有g(b_i)=f(b_i)\\
+根据命题2可知g(x)=f(x)\\
+因为f(b_i)已知,那么根据g(b_i)=f(b_i)\\可以利用证明命题1的方法构建方程组|A|=g(b_1)到g(b_{n+1})\\
+|A|=\prod_{1\leq i<j\leq n+1}(b_j-b_i)不为0,那么根据\mathbf{Cramen}定理可知|A|有唯一解\\
+即可以求出a_0,a_1,\cdots a_n，把这些a代入到f(x)中,因为这些a是确定的，所以f(x)也确定\\
+Q.E.D\end{gather*}</script><h2 id="1-7-习题"><a href="#1-7-习题" class="headerlink" title="1.7 习题"></a>1.7 习题</h2><script type="math/tex; mode=display">
+\begin{gather*}利用行列式的 Laplace 定理证明恒等式:\\
+
+\left(a b^{\prime}-a^{\prime} b\right)\left(c d^{\prime}-c^{\prime} d\right)-\left(a c^{\prime}-a^{\prime} c\right)\left(b d^{\prime}-b^{\prime} d\right)+\left(a d^{\prime}-a^{\prime} d\right)\left(b c^{\prime}-b^{\prime} c\right)=0\\
+
+证明显然下列行列式的值为零:
+
+\left|\begin{array}{llll}
+a & a^{\prime} & a & a^{\prime} \\
+b & b^{\prime} & b & b^{\prime} \\
+c & c^{\prime} & c & c^{\prime} \\
+d & d^{\prime} & d & d^{\prime}
+\end{array}\right|\\
+
+用 Laplace 定理按第一、第二行展开即得.\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}求  2 n  阶行列式的值 (空缺处都是零):\\
+\left|\begin{array}{llllll}
+a & & & & & b \\
+& \ddots & & & \unicode{x22f0} & \\
+& & a & b & & \\
+& & b & a & & \\
+& \unicode{x22f0} & & & \ddots & \\
+b & & & & & a
+\end{array}\right|\\
+解 不断用 Laplace 定理 (第一行及最后一行), 即可求得行列式的值为  \left(a^{2}-b^{2}\right)^{n}\\\end{gather*}</script><h2 id="Chapter-1-总复习题"><a href="#Chapter-1-总复习题" class="headerlink" title="Chapter 1 总复习题"></a>Chapter 1 总复习题</h2><p>(1)</p>
+<script type="math/tex; mode=display">
+\left|\begin{array}{cccc}
+1 & -1 & 1 & x-1 \\
+1 & -1 & x+1 & -1 \\
+1 & x-1 & 1 & -1 \\
+x+1 & -1 & 1 & -1
+\end{array}\right|</script><script type="math/tex; mode=display">
+1，2，3列加到4列,提出x\\
+4列全是1，把行列式消成下三角行列式\\
+|A|=x^4</script><p>(2)</p>
+<script type="math/tex; mode=display">
+\begin{gather*}解方程:
+
+\left|\begin{array}{cccc}
+1 & 1 & 1 & 1 \\
+1 & 2 & 4 & 8 \\
+1 & -2 & 4 & -8 \\
+1 & x & x^{2} & x^{3}
+\end{array}\right|=0 .\\
+
+解 事实上这是一个关于  x_0=1,x_1=2,x_2=-2, x_3=x  的 Vander Monde 行列式, 从而可得\\
+
+(x-1)(x-2)(x+2)(-2-1)(-2-2)(2-1)=0,\end{gather*}</script><p>(3)</p>
+<script type="math/tex; mode=display">
+\begin{gather*}已知  n  阶行列式
+
+|\boldsymbol{A}|=\left|\begin{array}{cccc}
+a_{11} & a_{12} & \ldots & a_{1 n} \\
+a_{21} & a_{22} & \ldots & a_{2 n} \\
+\vdots & \vdots & & \vdots \\
+a_{n 1} & a_{n 2} & \ldots & a_{n n}
+\end{array}\right|\\
+ b_{1}, b_{2}, \cdots, b_{n}  为常数, 若  |\boldsymbol{A}|  的值为  c , 求下列行列式  |\boldsymbol{B}|  的值:\\
+
+|\boldsymbol{B}|=\left|\begin{array}{cccc}
+a_{11} b_{1}^{2} & a_{12} b_{1} b_{2} & \ldots & a_{1 n} b_{1} b_{n} \\
+a_{21} b_{2} b_{1} & a_{22} b_{2}^{2} & \ldots & a_{2 n} b_{2} b_{n} \\
+\vdots & \vdots & & \vdots \\
+a_{n 1} b_{n} b_{1} & a_{n 2} b_{n} b_{2} & \ldots & a_{n n} b_{n}^{2}
+\end{array}\right|\end{gather*}</script><script type="math/tex; mode=display">
+|B|=c\times (b_1b_2\cdots b_n)^2</script><p>(4)</p>
+<script type="math/tex; mode=display">
+\begin{gather*}n  阶行列式  |\boldsymbol{A}|  的值为  c \\ 若将  |\boldsymbol{A}|  的每个第  (i, j)  元素  a_{i j}  换到第  (n-i+1, n-j+1)  位置上, 求得到的行列式的值.\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}|A|保持不变,相当于第i行和第n-i+1行,第j列和第n-j+1作交换\\
+相当于按照中轴(行列式的中心点)进行行列交换,行列进行相同次的交换\\
+所以交换次数为偶数|A|保持不变\end{gather*}</script><p>(5)</p>
+<script type="math/tex; mode=display">
+n  阶行列式  |\boldsymbol{A}|  的值为  c , 若将  |\boldsymbol{A}|  的每个元素  a_{i j}  换成  (-1)^{i+j} a_{i j} , 求得到的行列式 的值.</script><script type="math/tex; mode=display">
+相等于对第i行乘(-1)^i,对第j列乘上(-1)^j\\
+提出(-1)^{2(1+2+\cdots n)}=1\\
+行列式值不变</script><p>(6)</p>
+<script type="math/tex; mode=display">
+n  阶行列式  |\boldsymbol{A}|  的值为  c , 若将  |\boldsymbol{A}|  的每个元素  a_{i j}  换成  b^{i-j} a_{i j}(b \neq 0) , 求得到的行列 式的值.</script><script type="math/tex; mode=display">
+对第i行乘b^{i},对j列乘上b^{-j}\\
+提出得到\cfrac{b^1b^2\cdots b^n}{b^1b^2\cdots b^n}=1\\
+行列式值不变</script><p>(7)</p>
+<script type="math/tex; mode=display">
+\begin{gather*}n  阶行列式  |\boldsymbol{A}|  的值为  c \\ 若从第二列开始每一列加上它前面的一列\\同时对第一列加 上  |\boldsymbol{A}|  的第  n  列, 求得到的行列式的值.\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}按照拆分法得到|A|+|B|，|B|为原|A|所有列向后移(第一列为原第n列)\\
+|B|相当于原行列式从第n列开始,依次向后交换交换了n-1次\\
+若n为奇数则|B|=|A|,若n为偶数则|B|=|A|\end{gather*}</script><p>(8)</p>
+<script type="math/tex; mode=display">
+\begin{gather*}设多项式
+
+f(x)=a_{n} x^{n}+a_{n-1} x^{n-1}+\cdots+a_{1} x+a_{0}\\
+
+若  f(x)  有  n+1  个不同的根  b_{1}, b_{2}, \cdots, b_{n+1} , 即  f\left(b_{1}\right)=f\left(b_{2}\right)=\cdots=f\left(b_{n+1}\right)=0\\
+求证:  f(x)  是零多项式, 即  a_{n}=a_{n-1}=\cdots=a_{1}=a_{0}=0 .\\\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}证明:\\
+由假设  x_{0}=a_{0}, x_{1}=a_{1}, \cdots, x_{n-1}=a_{n-1}, x_{n}=a_{n}  是下列线性方程组 的解:\\
+
+\left\{\begin{array}{c}
+x_{0}+b_{1} x_{1}+\cdots+b_{1}^{n-1} x_{n-1}+b_{1}^{n} x_{n}=0 \\
+x_{0}+b_{2} x_{1}+\cdots+b_{2}^{n-1} x_{n-1}+b_{2}^{n} x_{n}=0 \\
+\cdots \cdots \cdots \cdots \\
+x_{0}+b_{n+1} x_{1}+\cdots+b_{n+1}^{n-1} x_{n-1}+b_{n+1}^{n} x_{n}=0 .
+\end{array}\right.\\
+
+上述线性方程组的系数行列式是一个 Vander Monde 行列式\\由于  b_{1}, b_{2}, \cdots, b_{n+1}  互不相同, 所以系数行列式不等于零.\\
+ 由 Cramer 法则可知上述线性方程组只有零 解, 即有  a_{n}=a_{n-1}=\cdots=a_{1}=a_{0}=0 .\end{gather*}</script><p>(9)</p>
+<script type="math/tex; mode=display">
+\begin{gather*}求下列行列式的值:
+
+|\boldsymbol{A}|=\left|\begin{array}{cccc}
+1 & 1 & 2 & 3 \\
+1 & 2-x^{2} & 2 & 3 \\
+2 & 3 & 1 & 5 \\
+2 & 3 & 1 & 9-x^{2}
+\end{array}\right| .\\\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}解:\\
+上述行列式按列的组合定义展开:N(1,2,3,4)=0, N(3,2,1,4)=3\\
+得到一个关于末知数  x  的首项系数为  -3  的 四次多项式\\ 
+注意到当  2-x^{2}=1  或  9-x^{2}=5  时, 行列式均有两行相同, 从而值为 零. \\
+因此  x=\pm 1, \pm 2  是上述一元四次多项式的 4 个不同的根\\ 
+由例  上面(8)可知  \pm 1, \pm 2  就是全部的根, 从而  |\boldsymbol{A}|=-3\left(x^{2}-1\right)\left(x^{2}-4\right) .\end{gather*}</script><p>(10)</p>
+<script type="math/tex; mode=display">
+计算行列式的值:\\
+|\boldsymbol{A}|=\left|\begin{array}{llll}
+0 & x & y & z \\
+x & 0 & z & y \\
+y & z & 0 & x \\
+z & y & x & 0
+\end{array}\right|</script><script type="math/tex; mode=display">
+答案为:(x+y+z)(x-y+z)(x-y-z)(x+y-z)</script><script type="math/tex; mode=display">
+\begin{gather*}方法1:按照1.5\ 例8(求和法)进行降阶\\
+2,3,4列加到第1列,提出公因子,把消去第1列2,3,4行的1进行降阶\\
+把降阶后的2列分别加到列1，3\end{gather*}</script><p>(11)</p>
+<script type="math/tex; mode=display">
+1.5\ 例10(综合应用)</script><p>(12)</p>
+<script type="math/tex; mode=display">
+\begin{gather*}设  n(n>2)  阶行列式  |\boldsymbol{A}|  的所有元素或为 1 或为  -1\\
+求证:  |\boldsymbol{A}|  的绝 对值小于等于  (n-1) !(n-1) .\\\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}证明:\\
+用归纳法.\\
+当  n=3  时, 将  |\boldsymbol{A}|  的第一列中元素等于  -1  的行乘以  -1 ,  |\boldsymbol{A}|  的绝对值不变\\
+因此不妨设  |\boldsymbol{A}|  的第一列元素全是 1.\\
+ 用同样方法将  |\boldsymbol{A}|  的第一
+
+行除  (1,1)  元素外的元素全变成  -1 .\\
+ 将第一列加到第二、第三列上, 得
+
+\operatorname{abs}(|\boldsymbol{A}|)=\operatorname{abs}\left(\left|\begin{array}{lll}
+1 & 0 & 0 \\
+1 & a & b \\
+1 & c & d
+\end{array}\right|\right)\\
+
+
+其中  a b s  表示绝对值. 由于  a, b, c, d  为 0 或 2 , 故  \operatorname{abs}(|\boldsymbol{A}|) \leq 4=(3-1) !(3-1) . 
+\\假定结论对  n-1  正确. 将  |\boldsymbol{A}|  按第一行展开:
+
+|\boldsymbol{A}|=a_{11} A_{11}+a_{12} A_{12}+\cdots+a_{1 n} A_{1 n} .
+
+\\因为  a_{1 i}=\pm 1 \\
+
+\begin{aligned}
+\operatorname{abs}(|\boldsymbol{A}|) & \leq \operatorname{abs}\left(A_{11}\right)+\operatorname{abs}\left(A_{12}\right)+\cdots+\operatorname{abs}\left(A_{1 n}\right) \\
+& \leq n(n-2) !(n-2) \leq(n-1) !(n-1)
+\end{aligned}\\
+Q.E.D\end{gather*}</script><p>(13)</p>
+<script type="math/tex; mode=display">
+\begin{gather*}设  |\boldsymbol{A}|=\left|a_{i j}\right|  是一个  n  阶行列式,  A_{i j}  是它的第  (i, j)  元素的代数余子 式\\
+ 求证:\\
+
+\left|\begin{array}{ccccc}
+a_{11} & a_{12} & \cdots & a_{1 n} & x_{1} \\
+a_{21} & a_{22} & \cdots & a_{2 n} & x_{2} \\
+\vdots & \vdots & & \vdots & \vdots \\
+a_{n 1} & a_{n 2} & \cdots & a_{n n} & x_{n} \\
+y_{1} & y_{2} & \cdots & y_{n} & 1
+\end{array}\right|=|\boldsymbol{A}|-\sum_{i=1}^{n} \sum_{j=1}^{n} A_{i j} x_{i} y_{j} .\\\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}证明:\\
+将上述行列式按最后一列展开, 展开式的第一项为
+
+(-1)^{n+2} x_{1}\left|\begin{array}{cccc}
+a_{21} & a_{22} & \cdots & a_{2 n} \\
+\vdots & \vdots & & \vdots \\
+a_{n 1} & a_{n 2} & \cdots & a_{n n} \\
+y_{1} & y_{2} & \cdots & y_{n}
+\end{array}\right| .\\
+
+再将上面行列式按最后一行展开, 得到\\
+
+(-1)^{n+2} x_{1}(-1)^{n-1}\left(y_{1} A_{11}+y_{2} A_{12}+\cdots+y_{n} A_{1 n}\right)=-\sum_{j=1}^{n} x_{1} y_{j} A_{1 j} .
+\\
+注意:(-1)^{n+j}y_j乘上的并不是A_{1j}\\
+而是(-1)^{n+j}y_j\times M_{1j}=(-1)^{n-1}y_j\times (-1)^{1+j}\times M_{1j}=(-1)^{n-1}y_jA_{1j}\\
+同理, 原行列式展开式的第  i(1 \leq i \leq n)  项为
+
+-\sum_{j=1}^{n} x_{i} y_{j} A_{i j} .\\
+
+而最后一项为  |\boldsymbol{A}| \\因此原行列式的值为
+
+|\boldsymbol{A}|-\sum_{i=1}^{n} \sum_{j=1}^{n} A_{i j} x_{i} y_{j}\end{gather*}</script><p>(14)</p>
+<script type="math/tex; mode=display">
+\begin{gather*}求下列  n+1  阶行列式的值  \left(a_{i} \neq 0,1 \leq i \leq n\right)、、
+
+|\boldsymbol{A}|=\left|\begin{array}{ccccc}
+a_{0} & 1 & 1 & \cdots & 1 \\
+1 & a_{1} & 0 & \cdots & 0 \\
+1 & 0 & a_{2} & \cdots & 0 \\
+\vdots & \vdots & \vdots & & \vdots \\
+1 & 0 & 0 & \cdots & a_{n}
+\end{array}\right|\\
+
+解:\\
+第  i(i=2, \cdots, n+1)  列乘以  -a_{i-1}^{-1}  加到第一列上\\
+得:
+
+|\boldsymbol{A}|=\left|\begin{array}{ccccc}
+a_{0}-\sum_{i=1}^{n} a_{i}^{-1} & 1 & 1 & \cdots & 1 \\
+0 & a_{1} & 0 & \cdots & 0 \\
+0 & 0 & a_{2} & \cdots & 0 \\
+\vdots & \vdots & \vdots & & \vdots \\
+0 & 0 & 0 & \cdots & a_{n}
+\end{array}\right|=\left(a_{1} a_{2} \cdots a_{n}\right)\left(a_{0}-\sum_{i=1}^{n} a_{i}^{-1}\right)\end{gather*}</script><p>(15)</p>
+<script type="math/tex; mode=display">
+\begin{gather*}计算  n  阶行列式  \left(a_{i} \neq 0\right)  :\\
+
+|\boldsymbol{A}|=\left|\begin{array}{ccccc}
+x_{1}-a_{1} & x_{2} & x_{3} & \cdots & x_{n} \\
+x_{1} & x_{2}-a_{2} & x_{3} & \cdots & x_{n} \\
+x_{1} & x_{2} & x_{3}-a_{3} & \cdots & x_{n} \\
+\vdots & \vdots & \vdots & & \vdots \\
+x_{1} & x_{2} & x_{3} & \cdots & x_{n}-a_{n}
+\end{array}\right|\\
+
+解:\\
+第一行乘以  -1  依次加到其余各行上去, 得:\\
+
+|\boldsymbol{A}|=\left|\begin{array}{ccccc}
+x_{1}-a_{1} & x_{2} & x_{3} & \cdots & x_{n} \\
+a_{1} & -a_{2} & 0 & \cdots & 0 \\
+a_{1} & 0 & -a_{3} & \cdots & 0 \\
+\vdots & \vdots & \vdots & & \vdots \\
+a_{1} & 0 & 0 & \cdots & -a_{n}
+\end{array}\right|=a_{1} a_{2} \cdots a_{n}\left|\begin{array}{ccccc}
+\frac{x_{1}}{a_{1}}-1 & \frac{x_{2}}{a_{2}} & \frac{x_{3}}{a_{3}} & \ldots & \frac{x_{n}}{a_{n}} \\
+1 & -1 & 0 & \ldots & 0 \\
+1 & 0 & -1 & \ldots & 0 \\
+\vdots & \vdots & \vdots & & \vdots \\
+1 & 0 & 0 & \cdots & -1
+\end{array}\right| .\\
+
+将后面的列都加到第一列上, 得:\\
+
+\begin{aligned}
+|\boldsymbol{A}| &=a_{1} a_{2} \cdots a_{n}\left|\begin{array}{ccccc}
+\sum_{i=1}^{n} \frac{x_{i}}{a_{i}}-1 & \frac{x_{2}}{a_{2}} & \frac{x_{3}}{a_{3}} & \cdots & \frac{x_{n}}{a_{n}} \\
+0 & -1 & 0 & \cdots & 0 \\
+0 & 0 & -1 & \cdots & 0 \\
+\vdots & \vdots & \vdots & & \vdots \\
+0 & 0 & 0 & \cdots & -1
+\end{array}\right| \\
+=&(-1)^{n-1} a_{1} a_{2} \cdots a_{n}\left(\sum_{i=1}^{n} (\frac{x_{i}}{a_{i}})-1\right)
+\end{aligned}\end{gather*}</script><p>(16)</p>
+<script type="math/tex; mode=display">
+\begin{gather*}计算下列行列式的值:
+
+|\boldsymbol{A}|=\left|\begin{array}{ccccc}
+a_{1}+b & a_{2} & a_{3} & \cdots & a_{n} \\
+a_{1} & a_{2}+b & a_{3} & \cdots & a_{n} \\
+a_{1} & a_{2} & a_{3}+b & \cdots & a_{n} \\
+\vdots & \vdots & \vdots & & \vdots \\
+a_{1} & a_{2} & a_{3} & \cdots & a_{n}+b
+\end{array}\right| .\\
+
+\\
+解:此题也可以利用(15)的解法\\
+ 从第二列起将各列依次加到第一列上并提取公因子  b+\sum_{i=1}^{n} a_{i} , 得到\\
+
+|\boldsymbol{A}|=\left(b+\sum_{i=1}^{n} a_{i}\right)\left|\begin{array}{ccccc}
+1 & a_{2} & a_{3} & \cdots & a_{n} \\
+1 & a_{2}+b & a_{3} & \cdots & a_{n} \\
+1 & a_{2} & a_{3}+b & \cdots & a_{n} \\
+\vdots & \vdots & \vdots & & \vdots \\
+1 & a_{2} & a_{3} & \cdots & a_{n}+b
+\end{array}\right|\\
+
+再将第一行乘以  -1  依次加到后面每一行, 得到\\
+
+|\boldsymbol{A}|=\left(b+\sum_{i=1}^{n} a_{i}\right) b^{n-1}\end{gather*}</script><p>(17)</p>
+<script type="math/tex; mode=display">
+计算  n  阶行列式:\\
+
+|\boldsymbol{A}|=\left|\begin{array}{cccccc}
+1 & 2 & 3 & \cdots & n-1 & n \\
+2 & 3 & 4 & \cdots & n & 1 \\
+3 & 4 & 5 & \cdots & 1 & 2 \\
+\vdots & \vdots & \vdots & & \vdots & \vdots \\
+n-1 & n & 1 & \cdots & n-3 & n-2 \\
+n & 1 & 2 & \cdots & n-2 & n-1
+\end{array}\right| .</script><script type="math/tex; mode=display">
+\begin{gather*}解:\\
+将所有行加到第一行提出公因子  \frac{1}{2} n(n+1) , 再消去第一行化为  n-1  阶行 列式:\\
+\begin{array}{l}
+|\boldsymbol{A}|=\frac{1}{2} n(n+1)\left|\begin{array}{cccccc}
+1 & 1 & 1 & \cdots & 1 & 1 \\
+2 & 3 & 4 & \cdots & n & 1 \\
+3 & 4 & 5 & \cdots & 1 & 2 \\
+\vdots & \vdots & \vdots & & \vdots & \vdots \\
+n-1 & n & 1 & \cdots & n-3 & n-2 \\
+n & 1 & 2 & \cdots & n-2 & n-1
+\end{array}\right|\\\\
+
+=\frac{1}{2} n(n+1)\left|\begin{array}{cccccc}
+1 & 0 & 0 & \cdots & 0 & 0 \\
+2 & 1 & 2 & \cdots & n-2 & -1 \\
+3 & 1 & 2 & \cdots & -2 & -1 \\
+\vdots & \vdots & \vdots & & \vdots & \vdots \\
+n-1 & 1 & 2-n & \cdots & -2 & -1 \\
+n & 1-n & 2-n & \cdots & -2 & -1
+\end{array}\right|\\\\
+
+
+=\frac{1}{2} n(n+1)\left|\begin{array}{ccccc}
+1 & 2 & \cdots & n-2 & -1 \\
+1 & 2 & \cdots & -2 & -1 \\
+\vdots & \vdots & & \vdots & \vdots \\
+1 & 2-n & \cdots & -2 & -1 \\
+1-n & 2-n & \cdots & -2 & -1
+\end{array}\right|
+\end{array}\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}最后将得到的行列式最后一行乘以  -1  依次加到前面  n-2  行上去, 得到\\
+
+\left|\begin{array}{ccccc}
+n & n & \cdots & n & 0 \\
+n & n & \cdots & 0 & 0 \\
+\vdots & \vdots & & \vdots & \vdots \\
+n & 0 & \cdots & 0 & 0 \\
+1-n & 2-n & \cdots & -2 & -1
+\end{array}\right|=(-1)^{\frac{1}{2} n(n-1)} n^{n-2} .\\\\
+对上面的行列式倒数第二行进行展开,降阶后继续,直到剩下
+\begin{vmatrix}
+n & 0\\
+-2 & -1
+\end{vmatrix}\\
+所以(-1)^{n-1}\cdot n\cdot (-1)^{n-2}\cdots  n\cdot (-1)^{2}\cdot n\cdot (-1)\\
+由此得到
+
+|\boldsymbol{A}|=(-1)^{\frac{1}{2} n(n-1)} \cdot \frac{n+1}{2} \cdot n^{n-1} .\end{gather*}</script><p>(18)</p>
+<script type="math/tex; mode=display">
+\begin{gather*}求下列  n  阶行列式的值:\\
+
+D_{n}=\left|\begin{array}{ccccccc}
+1-a_{1} & a_{2} & 0 & 0 & \cdots & 0 & 0 \\
+-1 & 1-a_{2} & a_{3} & 0 & \cdots & 0 & 0 \\
+0 & -1 & 1-a_{3} & a_{4} & \cdots & 0 & 0 \\
+\vdots & \vdots & \vdots & \vdots & & \vdots & \vdots \\
+0 & 0 & 0 & 0 & \cdots & -1 & 1-a_{n}
+\end{array}\right| .\\
+
+解 将所有行加到第一行上, 再按第一行展开得 \\ D_{n}=-a_1\cdot D_{n-1}+(-1)^{n+1}\cdot(-1)^{n-1} =-a_{1} D_{n-1}+1 . \\
+不难得到
+
+D_{n}=1-a_{1}+a_{1} a_{2}-a_{1} a_{2} a_{3}+\cdots+(-1)^{n} a_{1} a_{2} \cdots a_{n} .\end{gather*}</script><p>(19)</p>
+<script type="math/tex; mode=display">
+\begin{gather*}A_{n}=\left|\begin{array}{ccccccc}
+a_{0}+a_{1} & a_{1} & 0 & 0 & \cdots & 0 & 0 \\
+a_{1} & a_{1}+a_{2} & a_{2} & 0 & \cdots & 0 & 0 \\
+0 & a_{2} & a_{2}+a_{3} & a_{3} & \cdots & 0 & 0 \\
+\vdots & \vdots & \vdots & \vdots & & \vdots & \vdots \\
+0 & 0 & 0 & 0 & \cdots & a_{n-1} & a_{n-1}+a_{n}
+\end{array}\right|\\
+
+求证:\\
+
+A_{n}=a_{0} a_{1} \cdots a_{n}\left(\frac{1}{a_{0}}+\frac{1}{a_{1}}+\cdots+\frac{1}{a_{n}}\right) .
+
+证明:\\
+用数学归纳法.  n=1,2  时结论显然正确, 假定结论在小于  n  时正确. 将  A_{n}  按第  n  列展开, 得:\\
+
+A_{n}=\left(a_{n-1}+a_{n}\right) A_{n-1}-a_{n-1}\left|\begin{array}{cccccc}
+a_{0}+a_{1} & a_{1} & 0 & 0 & \cdots & 0 \\
+a_{1} & a_{1}+a_{2} & a_{2} & 0 & \cdots & 0 \\
+0 & a_{2} & a_{2}+a_{3} & a_{3} & \cdots & 0 \\
+\vdots & \vdots & \vdots & \vdots & & \vdots \\
+0 & 0 & 0 & 0 & \cdots & a_{n-1}
+\end{array}\right|\\
+
+即
+
+A_{n}=\left(a_{n-1}+a_{n}\right) A_{n-1}-a_{n-1}^{2} A_{n-2} .\end{gather*}</script><script type="math/tex; mode=display">
+\begin{gather*}代入A_{n-1},A_{n-2}\\
+\begin{aligned}
+A_n&=a_{n-1}\cdot A_{n-1}+a_{0} a_{1} \cdots a_{n}\left(\frac{1}{a_{0}}+\frac{1}{a_{1}}+\cdots+\frac{1}{a_{n-1}}\right)\\
+&-a_{0} a_{1} \cdots a_{n-1}^2\left(\frac{1}{a_{0}}+\frac{1}{a_{1}}+\cdots+\frac{1}{a_{n-2}}\right)\\
+&=a_{0} a_{1} \cdots a_{n-1}^2\left(\frac{1}{a_{n-1}}\right)+a_{0} a_{1} \cdots a_{n}\left(\frac{1}{a_{0}}+\frac{1}{a_{1}}+\cdots+\frac{1}{a_{n-1}}\right)\\
+&=a_{0} a_{1} \cdots a_{n-1}+a_{0} a_{1} \cdots a_{n}\left(\frac{1}{a_{0}}+\frac{1}{a_{1}}+\cdots+\frac{1}{a_{n-1}}\right)\\
+&=(a_0a_1\cdots a_{n-1}a_n\cdot \cfrac{1}{a_n})\left(\frac{1}{a_{0}}+\frac{1}{a_{1}}+\cdots+\frac{1}{a_{n-1}}\right)\\
+&=(a_0\cdots a_n)\left(\frac{1}{a_{0}}+\frac{1}{a_{1}}+\cdots+\frac{1}{a_{n-1}}\right)\\
+
+\end{aligned}\\
+Q.E.D\end{gather*}</script></article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/./pictures/jdgjj/1.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/07/13/%E6%95%B0%E5%AD%97%E8%BD%AC%E5%8C%96/"><img class="next-cover" src="/./pictures/jdgjj/2.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">数字转化(树形DP+公约数)</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/./pictures/profile/1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Li LiangJi</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%E4%BA%8C%E9%98%B6%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="toc-text">1.1 二阶行列式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%E4%B8%89%E9%98%B6%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="toc-text">1.2 三阶行列式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E4%B8%89%E9%98%B6%E8%A1%8C%E5%88%97%E5%BC%8F%E7%9A%84%E6%9C%AF%E8%AF%AD%E5%92%8C%E6%80%A7%E8%B4%A8"><span class="toc-text">二三阶行列式的术语和性质</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AF%E8%AF%AD"><span class="toc-text">术语</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%B4%A8"><span class="toc-text">性质</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-n%E9%98%B6%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="toc-text">1.3 n阶行列式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%B4%A8-1"><span class="toc-text">性质(1)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%B4%A8-3"><span class="toc-text">性质(3)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%B4%A8-2"><span class="toc-text">性质(2)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%B4%A8-4"><span class="toc-text">性质(4)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%B4%A8-5"><span class="toc-text">性质(5)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%B4%A8-6"><span class="toc-text">性质(6)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%B4%A8-7"><span class="toc-text">性质(7)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%B4%A8-5%E2%80%99"><span class="toc-text">性质(5’)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%B4%A8-6%E2%80%99"><span class="toc-text">性质(6’)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%B4%A8-7%E2%80%99"><span class="toc-text">性质(7’)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%B4%A8-4%E2%80%99"><span class="toc-text">性质(4’)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%B4%A8-9"><span class="toc-text">性质(9)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-%E8%A1%8C%E5%88%97%E5%BC%8F%E7%9A%84%E5%B1%95%E5%BC%80%E5%92%8C%E8%BD%AC%E7%BD%AE"><span class="toc-text">1.4 行列式的展开和转置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E5%85%A5%E4%B8%80%E4%B8%AA%E7%AC%A6%E5%8F%B7-delta-ij"><span class="toc-text">引入一个符号$\delta_{ij}$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E7%90%86-1"><span class="toc-text">定理(1)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E7%90%86-2"><span class="toc-text">引理(2)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E7%90%86-3"><span class="toc-text">引理(3)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E7%90%86-4"><span class="toc-text">定理(4)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E7%90%86-5"><span class="toc-text">定理(5)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F%E4%B8%8E%E6%96%B9%E7%A8%8B%E7%BB%84%E8%A7%A3%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-text">行列式与方程组解的关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E7%90%86-6-Cramen%E6%B3%95%E5%88%99"><span class="toc-text">定理(6) Cramen法则</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-%E8%A1%8C%E5%88%97%E5%BC%8F%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="toc-text">1.5 行列式的计算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F%E7%9A%84%E8%AE%A1%E7%AE%97%E5%8E%9F%E5%88%99"><span class="toc-text">行列式的计算原则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B1"><span class="toc-text">例1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B2-%E5%88%A9%E7%94%A80%E6%88%961%E9%99%8D%E9%98%B6"><span class="toc-text">例2 (利用0或1降阶)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B3-%E5%88%A9%E7%94%A80%E6%88%961%E9%99%8D%E9%98%B6"><span class="toc-text">例3 (利用0或1降阶)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B4-%E6%8F%90%E5%8F%96-c"><span class="toc-text">例4(提取$c$)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B5-mathbf-Vander-Monde%E8%A1%8C%E5%88%97%E5%BC%8F-%E9%80%92%E6%8E%A8%E6%B3%95"><span class="toc-text">例5 $\mathbf{Vander\ Monde行列式}$ (递推法)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B6-%E5%A4%9A%E9%A1%B9%E5%BC%8F%E5%8F%8B%E9%98%B5%E7%9A%84%E7%89%B9%E5%BE%81%E5%A4%9A%E9%A1%B9%E5%BC%8F-%E9%80%92%E6%8E%A8%E6%B3%95"><span class="toc-text">例6 多项式友阵的特征多项式 (递推法)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B7-%E6%B1%82%E5%92%8C%E6%B3%95"><span class="toc-text">例7 (求和法)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B8-%E6%B1%82%E5%92%8C%E6%B3%95"><span class="toc-text">例8 (求和法)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B-9-%E6%8B%86%E5%88%86%E6%B3%95"><span class="toc-text">例 9 (拆分法)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B10-%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8"><span class="toc-text">例10 (综合应用)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-%E8%8A%82%E4%B9%A0%E9%A2%98"><span class="toc-text">1.5 节习题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-6-%E8%A1%8C%E5%88%97%E5%BC%8F%E7%9A%84%E7%AD%89%E4%BB%B7%E5%AE%9A%E4%B9%89"><span class="toc-text">1.6 行列式的等价定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%891-%E6%8E%92%E5%88%97%E5%92%8C%E9%80%86%E5%BA%8F%E6%95%B0"><span class="toc-text">定义1 排列和逆序数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%892-%E5%A5%87%E5%81%B6%E6%8E%92%E5%88%97"><span class="toc-text">定义2 奇偶排列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E7%90%86-1"><span class="toc-text">引理(1)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E7%90%86-2-1"><span class="toc-text">引理(2)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E7%90%86-3-1"><span class="toc-text">引理(3)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A83%E9%98%B6%E8%A1%8C%E5%88%97%E5%BC%8F%E5%BC%95%E5%87%BA%E7%BB%84%E5%90%88%E5%AE%9A%E4%B9%89"><span class="toc-text">用3阶行列式引出组合定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%81%E6%98%8E%E5%89%8D%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AE%9A%E4%B9%89"><span class="toc-text">证明前的一些定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E7%90%86-1-1"><span class="toc-text">定理(1)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E7%90%86-4"><span class="toc-text">引理(4)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E7%90%86-1-%E7%9A%84%E6%8E%A8%E8%AE%BA"><span class="toc-text">定理(1)的推论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6-%E4%B9%A0%E9%A2%98"><span class="toc-text">1.6 习题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-7-Laplace%E5%AE%9A%E7%90%86"><span class="toc-text">1.7 Laplace定理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#n%E9%98%B6%E5%AD%90%E5%BC%8F%E5%92%8C%E5%85%B6%E4%BD%99%E5%AD%90%E5%BC%8F"><span class="toc-text">n阶子式和其余子式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E9%98%B6%E8%A1%8C%E5%88%97%E5%BC%8F%E4%BE%8B%E5%AD%90"><span class="toc-text">4阶行列式例子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%81%E6%98%8E%E5%AE%9A%E7%90%86"><span class="toc-text">证明定理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%95%E7%90%86-1-1"><span class="toc-text">引理(1)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%95%E7%90%86-2-2"><span class="toc-text">引理(2)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Laplace%E5%AE%9A%E7%90%86%E6%8E%A8%E8%AE%BA"><span class="toc-text">Laplace定理推论</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-%E5%AE%9A%E7%90%86-6-Cramen%E5%AE%9A%E7%90%86%E7%9A%84%E6%8E%A8%E5%B9%BF"><span class="toc-text">1.4 定理(6) Cramen定理的推广</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E9%A2%981"><span class="toc-text">命题1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E9%A2%982"><span class="toc-text">命题2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E9%A2%983"><span class="toc-text">命题3</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-7-%E4%B9%A0%E9%A2%98"><span class="toc-text">1.7 习题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chapter-1-%E6%80%BB%E5%A4%8D%E4%B9%A0%E9%A2%98"><span class="toc-text">Chapter 1 总复习题</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/07/17/AA-01/" title="Chapter 01"><img src="/./pictures/jdgjj/1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Chapter 01"/></a><div class="content"><a class="title" href="/2022/07/17/AA-01/" title="Chapter 01">Chapter 01</a><time datetime="2022-07-17T09:31:11.000Z" title="Created 2022-07-17 18:31:11">2022-07-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/13/%E6%95%B0%E5%AD%97%E8%BD%AC%E5%8C%96/" title="数字转化(树形DP+公约数)"><img src="/./pictures/jdgjj/2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数字转化(树形DP+公约数)"/></a><div class="content"><a class="title" href="/2022/07/13/%E6%95%B0%E5%AD%97%E8%BD%AC%E5%8C%96/" title="数字转化(树形DP+公约数)">数字转化(树形DP+公约数)</a><time datetime="2022-07-13T05:33:43.000Z" title="Created 2022-07-13 14:33:43">2022-07-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/12/Triangle%20loop/" title="Triangle loop"><img src="/./pictures/jdgjj/3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Triangle loop"/></a><div class="content"><a class="title" href="/2022/07/12/Triangle%20loop/" title="Triangle loop">Triangle loop</a><time datetime="2022-07-12T04:45:11.000Z" title="Created 2022-07-12 13:45:11">2022-07-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/12/%E5%88%86%E7%BB%84%E6%B1%82%E5%AF%B9%E6%95%B0%E5%92%8C(%E4%BA%8C%E5%88%86%20+%20%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86)/" title="分组求对数和(二分 + 容斥原理)"><img src="/./pictures/jdgjj/1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="分组求对数和(二分 + 容斥原理)"/></a><div class="content"><a class="title" href="/2022/07/12/%E5%88%86%E7%BB%84%E6%B1%82%E5%AF%B9%E6%95%B0%E5%92%8C(%E4%BA%8C%E5%88%86%20+%20%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86)/" title="分组求对数和(二分 + 容斥原理)">分组求对数和(二分 + 容斥原理)</a><time datetime="2022-07-12T04:45:11.000Z" title="Created 2022-07-12 13:45:11">2022-07-12</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 By Li LiangJi</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"left","width":200,"height":350},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body></html>
